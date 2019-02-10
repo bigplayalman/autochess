@@ -1,15 +1,18 @@
 import React from 'react';
+import classnames from 'classnames'
 
 export const Hero = (props) => {
-  const {name, images} = props;
-  const portrait = `${name.toLowerCase().split(' ').join('_')}_full.png`;
-  const image = images[portrait];
+  const {name, images, selectHero, portrait, selected, disabled} = props;
+  const path = portrait ? portrait : `${name.toLowerCase().split(' ').join('_')}_full.png`;
+  const image = images[path];
+  const styles = classnames({
+    'hero': true,
+    selected,
+    disabled: disabled && !selected
+  })
 
-  if (!image) {
-    console.log(image, portrait);
-  }
   return (
-    <div className="hero">
+    <div className={styles} onClick={(e) => selectHero(e, props)}>
       <img src={image} alt={name}/>
       {/* {name} */}
     </div>
