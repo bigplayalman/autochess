@@ -1,8 +1,17 @@
 import React from 'react';
 
+export const Hero = (props) => {
+  const {name, images} = props;
+  const portrait = `${name.toLowerCase().split(' ').join('_')}_full.png`;
+  const image = images[portrait];
 
-export const Hero = ({hero}) => {
+  if (!image) {
+    console.log(image, portrait);
+  }
   return (
-    <div>Hero</div>
+    <div className="hero">
+      <img src={image} alt={name}/>
+      {/* {name} */}
+    </div>
   )
 }
