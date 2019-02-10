@@ -1,0 +1,13 @@
+.app {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    .hero {
+        flex: 0 10%;
+        display: flex;
+        flex-flow: column;
+        img {
+            width:100%;
+        }
+    }
+}
