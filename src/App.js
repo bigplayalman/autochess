@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import './App.scss';
 import { Hero } from './components/Heroes';
 import { heroes } from './heroes';
+import { synergies } from './synergies';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       heroes,
+      synergies,
+      activeSynergies: [],
       images: this.importAll(require.context('./assets', false, /\.(png|jpe?g|svg)$/)),
       selectedHeroes: []
     }
@@ -22,20 +25,52 @@ class App extends Component {
   selectHero(e, hero) {
     e.preventDefault();
     const filteredHeroes = this.state.selectedHeroes.filter(x => x.name === hero.name);
-    if (this.state.selectedHeroes.length >= 10) {
-      if (filteredHeroes.length) {
-        const selectedHeroes = this.state.selectedHeroes.filter(x => x.name !== hero.name);
-        this.setState({ selectedHeroes });
+    let selectedHeroes = this.state.selectedHeroes;
+    switch (selectedHeroes.length) {
+      case 11: break;
+      case 10:
+        if (filteredHeroes.length) {
+          selectedHeroes = this.state.selectedHeroes.filter(x => x.name !== hero.name);
+        }
+        break;
+      default:
+        if (filteredHeroes.length) {
+          selectedHeroes = this.state.selectedHeroes.filter(x => x.name !== hero.name);
+        } else {
+          selectedHeroes = this.state.selectedHeroes.concat([hero]);
+        }
+    }
+    const synergies = this.generateSynergies(selectedHeroes);
+    const activeSynergies = this.getActiveSynergies(synergies);
+    this.setState({ selectedHeroes, synergies, activeSynergies });
+  }
+  getActiveSynergies(actives) {
+    const activeSynergies = [];
+    synergies.map(synergy => {
+      if (actives[synergy.type] && actives[synergy.type] >= synergy.count) {
+        activeSynergies.push(synergy);
       }
-      return;
-    }
-    if (!filteredHeroes.length) {
-      const selectedHeroes = this.state.selectedHeroes.concat([hero]);
-      this.setState({ selectedHeroes });
-    } else {
-      const selectedHeroes = this.state.selectedHeroes.filter(x => x.name !== hero.name);
-      this.setState({ selectedHeroes });
-    }
+      return synergy;
+    })
+    return activeSynergies;
+  }
+
+  generateSynergies(heroes) {
+    const synergies = {};
+    heroes.map(hero => {
+      Object.keys(hero).map(prop => {
+        if (hero[prop] === true) {
+          if (synergies[prop]) {
+            synergies[prop]++;
+          } else {
+            synergies[prop] = 1;
+          }
+        }
+        return prop;
+      });
+      return hero;
+    });
+    return synergies;
   }
 
   removeHero(e, hero) {
@@ -45,6 +80,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="app">
         <header>
@@ -64,7 +100,13 @@ class App extends Component {
             }
           </div>
           <div className="effects">
-          
+            {this.state.activeSynergies.map((synergy, index) => {
+              return (
+                <div key={`${synergy.type}-${index}`}>
+                  {synergy.effect}
+                </div>
+              );
+            })}
           </div>
           <div className="all-heroes">
             {
