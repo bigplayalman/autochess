@@ -1,0 +1,64 @@
+@import "./Mobile.scss";
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  background: lightblue;
+}
+.header {
+  background: lightcoral;
+}
+.footer {
+  background: lightcyan;
+}
+.selected-heroes {
+  background: lightgoldenrodyellow;
+}
+.all-heroes {
+  background: lightgreen;
+}
+.active-synergies {
+  background: lightgray;
+}
+.active-list {
+  background: lightsalmon;
+}
+.all-synergies {
+  background: lightskyblue;
+}
+.container {
+  display: grid;
+  padding: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+.container > div {
+  padding: 10px;
+  border: 1px dashed #888;
+}
+
+.header {
+  grid-area: header;
+}
+.selected-heroes {
+  grid-area: selected-heroes;
+}
+.active-list {
+  grid-area: active-list;
+}
+.active-synergies {
+  grid-area: active-synergies;
+}
+.all-synergies {
+  grid-area: all-synergies;
+}
+.all-heroes {
+  grid-area: all-heroes;
+}
+.footer {
+  grid-area: footer;
+}
