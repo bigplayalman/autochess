@@ -1,0 +1,25 @@
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-areas:
+      "header header header header"
+      "selected-heroes selected-heroes selected-heroes active-list"
+      "active-synergies active-synergies active-synergies active-list"
+      "all-synergies all-synergies all-synergies active-list"
+      "all-heroes all-heroes all-heroes all-heroes"
+      "footer footer footer footer";
+    grid-template-columns: 1fr 1fr 200px 100px;
+    grid-template-rows: 60px 1fr 1fr 1fr 1fr 60px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .container {
+    grid-template-areas:
+      "header header header header"
+      "selected-heroes selected-heroes active-list active-synergies"
+      "selected-heroes selected-heroes active-list all-synergies"
+      "all-heroes all-heroes all-heroes all-heroes"
+      "footer footer footer footer";
+    grid-template-columns: 1fr 1fr 200px 1fr;
+    grid-template-rows: 60px 0.5fr 0.5fr 1fr 60px;
+  }
+}
