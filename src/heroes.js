@@ -109,7 +109,7 @@ export const heroes = [
   },
   {
     name: 'Juggernaut',
-    ogre: true,
+    orc: true,
     warrior: true,
 
   },
