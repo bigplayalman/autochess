@@ -24,6 +24,12 @@ body,
 }
 .selected-heroes {
   grid-area: selected-heroes;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  .hero {
+    flex: 0 1 calc(100%/3);
+  }
 }
 .active-list {
   grid-area: active-list;
