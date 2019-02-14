@@ -2,6 +2,7 @@
   "name": "helper",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bigplayalman.github.io/autochess/",
   "dependencies": {
     "classnames": "^2.2.6",
     "node-sass": "^4.11.0",
