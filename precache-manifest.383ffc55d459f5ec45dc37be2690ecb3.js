@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/autochess/static/media/mirana_full.c56ceee8.png"
   },
   {
-    "revision": "7db8dc30aa1ff22448f4",
-    "url": "/autochess/static/css/main.76431c3e.chunk.css"
+    "revision": "d90fa5f90e50222e92d5",
+    "url": "/autochess/static/css/main.0260c7cd.chunk.css"
   },
   {
     "revision": "08ed97143ef2a2104625",
@@ -232,8 +232,8 @@ self.__precacheManifest = [
     "url": "/autochess/static/media/meepo_full.ae16eab5.png"
   },
   {
-    "revision": "7db8dc30aa1ff22448f4",
-    "url": "/autochess/static/js/main.7db8dc30.chunk.js"
+    "revision": "d90fa5f90e50222e92d5",
+    "url": "/autochess/static/js/main.d90fa5f9.chunk.js"
   },
   {
     "revision": "fae37a912af223cc7593af04d09e7001",
@@ -460,7 +460,7 @@ self.__precacheManifest = [
     "url": "/autochess/static/media/zuus_full.9c9d00d8.png"
   },
   {
-    "revision": "4c84036aae85407a4fcc8a7b84a3f886",
+    "revision": "65bf7da48e7dacac7f3811ad090cec77",
     "url": "/autochess/index.html"
   }
 ];
