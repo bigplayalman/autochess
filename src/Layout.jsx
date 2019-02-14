@@ -1,20 +1,153 @@
 import React, { Component } from "react";
+import { heroes } from './heroes';
+import { synergies } from './synergies';
 import "./Layout.scss";
+import Header from "./components/Header";
+import HeroList from "./components/Hero.list";
+import SynergyList from "./components/Synergy.list";
+import TypeList from "./components/Type.list";
 
-class App extends Component {
+class Layout extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      heroes,
+      synergies: {},
+      activeSynergies: [],
+      images: this.importAll(require.context('./assets', false, /\.(png|jpe?g|svg)$/)),
+      selectedHeroes: []
+    }
+  }
+
+  importAll(r) {
+    let images = {};
+    r.keys().forEach((item) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+
+  selectHero(e, hero) {
+    e.preventDefault();
+    const filteredHeroes = this.state.selectedHeroes.filter(x => x.name === hero.name);
+    let selectedHeroes = this.state.selectedHeroes;
+    switch (selectedHeroes.length) {
+      case 11: break;
+      case 10:
+        if (filteredHeroes.length) {
+          selectedHeroes = this.state.selectedHeroes.filter(x => x.name !== hero.name);
+        }
+        break;
+      default:
+        if (filteredHeroes.length) {
+          selectedHeroes = this.state.selectedHeroes.filter(x => x.name !== hero.name);
+        } else {
+          selectedHeroes = this.state.selectedHeroes.concat([hero]);
+        }
+    }
+    const synergies = this.generateSynergies(selectedHeroes);
+    const activeSynergies = this.getActiveSynergies(synergies);
+    this.setState((oldState) => {
+      return {
+        ...oldState,
+        selectedHeroes,
+        synergies,
+        activeSynergies
+      }
+    });
+  }
+
+  getActiveSynergies(actives) {
+    const activeSynergies = [];
+    synergies.map(synergy => {
+      if (actives[synergy.type] && actives[synergy.type] >= synergy.count) {
+        activeSynergies.push(synergy);
+      }
+      return synergy;
+    })
+    return activeSynergies;
+  }
+
+  generateSynergies(heroes) {
+    const synergies = {};
+    heroes.map(hero => {
+      Object.keys(hero).map(prop => {
+        if (hero[prop] === true) {
+          if (synergies[prop]) {
+            synergies[prop]++;
+          } else {
+            synergies[prop] = 1;
+          }
+        }
+        return prop;
+      });
+      return hero;
+    });
+    return synergies;
+  }
+
+  removeHero(e, hero) {
+    e.preventDefault();
+    const selectedHeroes = this.state.selectedHeroes.filter(x => x.name !== hero.name);
+    const synergies = this.generateSynergies(selectedHeroes);
+    const activeSynergies = this.getActiveSynergies(synergies);
+    this.setState((oldState) => {
+      return {
+        ...oldState,
+        selectedHeroes,
+        synergies,
+        activeSynergies
+      }
+    });
+  }
   render() {
+    const selectedHeroes = {
+      heroes: this.state.selectedHeroes,
+      selectHero: this.removeHero.bind(this),
+      images: this.state.images,
+      className: 'selected-heroes',
+      selectedHeroes: [],
+      disabled: false
+    }
+    const allHeroes = {
+      heroes: this.state.heroes,
+      selectHero: this.selectHero.bind(this),
+      images: this.state.images,
+      className: 'all-heroes',
+      selectedHeroes: this.state.selectedHeroes,
+      disabled: this.state.selectedHeroes.length === 10
+    }
+
+    const activeSynergies = {
+      title: 'Active Synergies',
+      synergies: this.state.activeSynergies,
+      className: 'active-synergies',
+      activeSynergies: []
+    }
+    const allSynergies = {
+      title: 'All Synergies',
+      synergies,
+      className: 'all-synergies',
+      activeSynergies: this.state.activeSynergies
+    }
+    const types = {
+      title: 'Classes and Races',
+      className: 'active-list',
+      types: this.state.synergies
+    }
     return (
+
       <div className="container">
-        <div className="header">header</div>
-        <div className="selected-heroes">selected-heroes</div>
-        <div className="active-list">active-list</div>
-        <div className="active-synergies">active-synergies</div>
-        <div className="all-synergies">all-synergies</div>
-        <div className="all-heroes">all-heroes</div>
-        <div className="footer">footer</div>
+        <Header />
+        <HeroList {...selectedHeroes} />
+        <TypeList {...types} />
+        <SynergyList {...activeSynergies} />
+        <SynergyList {...allSynergies} />
+        <HeroList {...allHeroes} />
+        <div className="footer">
+          Dota 2 content and materials are trademarks and copyrights of Valve or its licensors.  This site is not affiliated with Valve.
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Layout;

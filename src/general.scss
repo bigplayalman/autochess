@@ -1,0 +1,39 @@
+$theme-color-1: #1e2a38;
+$theme-color-2: #4D5B6C;
+$theme-color-3: #081320;
+$theme-color-4: #4A6D63;
+$theme-color-5: #C9B89C;
+$theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
+
+.header, .footer {
+  background: $theme-color-1;
+  color: white;
+  strong {
+    margin: 0;
+    display: block;
+  }
+}
+.active-list {
+  text-transform: capitalize;
+}
+.active-list, .all-synergies {
+  background: $theme-color-2;
+  color: white;
+  box-shadow: $theme-inset-shadow;
+  .selected {
+    color: $theme-color-1;
+    font-weight: 500;
+  }
+}
+.all-heroes {
+  background: $theme-color-3;
+}
+
+.selected-heroes {
+  background: $theme-color-4;
+  box-shadow: $theme-inset-shadow
+}
+.active-synergies {
+  background: $theme-color-5;
+  box-shadow: $theme-inset-shadow
+}

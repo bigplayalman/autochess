@@ -1,4 +1,6 @@
 @import "./Mobile.scss";
+@import "./heroes.scss";
+@import "./general.scss";
 
 html,
 body,
@@ -7,42 +9,18 @@ body,
   height: 100%;
 }
 .container {
-  background: lightblue;
-}
-.header {
-  background: lightcoral;
-}
-.footer {
-  background: lightcyan;
-}
-.selected-heroes {
-  background: lightgoldenrodyellow;
-}
-.all-heroes {
-  background: lightgreen;
-}
-.active-synergies {
-  background: lightgray;
-}
-.active-list {
-  background: lightsalmon;
-}
-.all-synergies {
-  background: lightskyblue;
-}
-.container {
   display: grid;
-  padding: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
+  width: 100%;
+  height: 100%;
 }
 .container > div {
   padding: 10px;
-  border: 1px dashed #888;
 }
 
 .header {
   grid-area: header;
+  display: flex;
+  align-items: center;
 }
 .selected-heroes {
   grid-area: selected-heroes;
@@ -55,6 +33,7 @@ body,
 }
 .all-synergies {
   grid-area: all-synergies;
+  overflow-y: scroll;
 }
 .all-heroes {
   grid-area: all-heroes;
