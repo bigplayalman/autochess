@@ -7,11 +7,24 @@
       "all-synergies all-synergies all-synergies active-list"
       "all-heroes all-heroes all-heroes all-heroes"
       "footer footer footer footer";
-    grid-template-columns: 1fr 1fr 200px 100px;
+    grid-template-columns: 1fr 1fr 200px 135px;
     grid-template-rows: 60px 1fr 1fr 300px 1fr 60px;
   }
   .hero {
-    flex: 0 96px !important;
+    flex: 0 85px !important;
+  }
+  .all-synergies {
+    background: #4A6D63 !important;
+  }
+  .active-list {
+    font-size: 14px;
+  }
+  .active-list, .all-synergies, .active-synergies {
+    > div {
+      margin-bottom: 15px;
+      padding: 3px !important;
+      box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
+    }
   }
 }
 @media only screen and (min-width: 600px) {
