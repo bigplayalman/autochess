@@ -1,0 +1,46 @@
+.all-heroes {
+  padding-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: flex-end;
+}
+
+.selected-heroes {
+  padding-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-end;
+
+  .hero {
+    flex: 0 20%;
+  }
+}
+
+.hero {
+  flex: 0 1 8.916%;
+  display: flex;
+  flex-flow: column;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  img {
+    width: 100%
+  }
+}
+
+.selected {
+  img {
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+  }
+
+}
+
+.disabled {
+  img {
+    filter: grayscale(100%);
+  }
+}

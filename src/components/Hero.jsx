@@ -14,7 +14,6 @@ export const Hero = (props) => {
   return (
     <div className={styles} onClick={(e) => selectHero(e, props)}>
       <img src={image} alt={name}/>
-      {/* {name} */}
     </div>
   )
 }

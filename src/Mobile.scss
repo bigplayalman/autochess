@@ -8,18 +8,21 @@
       "all-heroes all-heroes all-heroes all-heroes"
       "footer footer footer footer";
     grid-template-columns: 1fr 1fr 200px 100px;
-    grid-template-rows: 60px 1fr 1fr 1fr 1fr 60px;
+    grid-template-rows: 60px 1fr 1fr 300px 1fr 60px;
+  }
+  .hero {
+    flex: 0 96px !important;
   }
 }
 @media only screen and (min-width: 600px) {
   .container {
     grid-template-areas:
       "header header header header"
-      "selected-heroes selected-heroes active-list active-synergies"
-      "selected-heroes selected-heroes active-list all-synergies"
+      "active-list selected-heroes selected-heroes  all-synergies"
+      "active-list active-synergies active-synergies  all-synergies"
       "all-heroes all-heroes all-heroes all-heroes"
       "footer footer footer footer";
-    grid-template-columns: 1fr 1fr 200px 1fr;
-    grid-template-rows: 60px 0.5fr 0.5fr 1fr 60px;
+    grid-template-columns:200px 1fr 1fr 1fr;
+    grid-template-rows: 60px 200px 1fr 1fr 60px;
   }
 }
