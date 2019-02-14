@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="header">
       <strong>
-        Dota AutoChess Synergy
+        Dota Auto Chess Synergy
       </strong>
     </div>
   );
