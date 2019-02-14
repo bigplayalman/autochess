@@ -1,7 +1,7 @@
 {
   "main.css": "/autochess/static/css/main.0260c7cd.chunk.css",
-  "main.js": "/autochess/static/js/main.d90fa5f9.chunk.js",
-  "main.js.map": "/autochess/static/js/main.d90fa5f9.chunk.js.map",
+  "main.js": "/autochess/static/js/main.c979c786.chunk.js",
+  "main.js.map": "/autochess/static/js/main.c979c786.chunk.js.map",
   "static/js/1.08ed9714.chunk.js": "/autochess/static/js/1.08ed9714.chunk.js",
   "static/js/1.08ed9714.chunk.js.map": "/autochess/static/js/1.08ed9714.chunk.js.map",
   "runtime~main.js": "/autochess/static/js/runtime~main.8cea902f.js",
@@ -119,6 +119,6 @@
   "static/media/zuus_full.png": "/autochess/static/media/zuus_full.9c9d00d8.png",
   "static/css/main.0260c7cd.chunk.css.map": "/autochess/static/css/main.0260c7cd.chunk.css.map",
   "index.html": "/autochess/index.html",
-  "precache-manifest.383ffc55d459f5ec45dc37be2690ecb3.js": "/autochess/precache-manifest.383ffc55d459f5ec45dc37be2690ecb3.js",
+  "precache-manifest.e1b84ce348f6ee712debca4f49a5c1bb.js": "/autochess/precache-manifest.e1b84ce348f6ee712debca4f49a5c1bb.js",
   "service-worker.js": "/autochess/service-worker.js"
 }
