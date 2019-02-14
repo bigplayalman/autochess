@@ -25,7 +25,7 @@ export const heroes = [
   {
     name: 'Bat Rider',
     troll: true,
-    kight: true,
+    knight: true,
  
   },
   {
@@ -43,7 +43,7 @@ export const heroes = [
   {
     name: 'Chaos Knight',
     demon: true,
-    kight: true,
+    knight: true,
  
   },
   {
@@ -74,7 +74,7 @@ export const heroes = [
     name: 'Dragon Knight',
     human: true,
     dragon: true,
-    kight: true,
+    knight: true,
  
   },
   {
@@ -146,7 +146,7 @@ export const heroes = [
   {
     name: 'Luna',
     elf: true,
-    kight: true,
+    knight: true,
  
   },
   {
@@ -183,7 +183,7 @@ export const heroes = [
   {
     name: 'Omni Knight',
     human: true,
-    kight: true,
+    knight: true,
  
   },
   {
