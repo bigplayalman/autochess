@@ -27,9 +27,11 @@ body,
 }
 .active-list {
   grid-area: active-list;
+  overflow-y: scroll;
 }
 .active-synergies {
   grid-area: active-synergies;
+  overflow-y: scroll;
 }
 .all-synergies {
   grid-area: all-synergies;

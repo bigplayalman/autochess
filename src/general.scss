@@ -13,17 +13,10 @@ $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
     display: block;
   }
 }
-.active-list {
-  text-transform: capitalize;
-}
+
 .active-list, .all-synergies {
   background: $theme-color-2;
   color: white;
-  box-shadow: $theme-inset-shadow;
-  .selected {
-    color: $theme-color-1;
-    font-weight: 500;
-  }
 }
 .all-heroes {
   background: $theme-color-3;
@@ -36,4 +29,21 @@ $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
 .active-synergies {
   background: $theme-color-5;
   box-shadow: $theme-inset-shadow
+}
+
+.active-list, .all-synergies, .active-synergies {
+  text-transform: capitalize;
+  > strong {
+    padding-bottom: 10px;
+    display: block;
+  }
+  > div {
+    margin-bottom: 15px;
+    padding: 5px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+  .selected {
+    color: $theme-color-1;
+    font-weight: 500;
+  }
 }
