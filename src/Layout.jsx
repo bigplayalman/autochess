@@ -67,7 +67,8 @@ class Layout extends Component {
         }
     }
     const synergies = this.generateSynergies(selectedHeroes);
-    const activeSynergies = this.getActiveSynergies(synergies);
+    const actives = this.getActiveSynergies(synergies);
+    const activeSynergies = this.conditionalSynergies(actives, selectedHeroes);
     this.setState((oldState) => {
       return {
         ...oldState,
@@ -76,6 +77,16 @@ class Layout extends Component {
         activeSynergies
       }
     });
+  }
+
+  conditionalSynergies(synergies, heroes) {
+    console.log(synergies);
+    const demonhunters = synergies.filter(x => x.type === 'demonhunter');
+    const demons = heroes.filter(y => y.demon === true);
+    if (demonhunters.length === 0 && demons.length > 1) {
+      return synergies.filter(y => y.type !== 'demon');
+    }
+    return synergies;
   }
 
   getActiveSynergies(actives) {
