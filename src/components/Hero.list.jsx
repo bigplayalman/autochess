@@ -1,10 +1,30 @@
 import React from "react";
 import { Hero } from "./Hero";
 
-const HeroList = ({heroes, selectHero, images, className, selectedHeroes, disabled}) => {
+const HeroList = ({heroes, selectHero, images, className, selectedHeroes, disabled, filters = {}}) => {
+  const activeFilters = [];
+  Object.keys(filters).map((key) => {
+    if (filters[key]) {
+      activeFilters.push(key);
+    }
+    return key;
+  })
+  console.log(activeFilters);
+  const filteredHeroes = [];
+  activeFilters.map(filter => {
+    heroes.map(hero => {
+      if(hero[filter]) {
+        filteredHeroes.push(hero);
+      }
+      return hero;
+    })
+    return filter;
+  })
+
+  const activeHeroes = filteredHeroes.length ? filteredHeroes : heroes;
   return (
     <div className={className}>
-      {heroes.map((hero, index) => {
+      {activeHeroes.map((hero, index) => {
         const props = {
           ...hero,
           images,
