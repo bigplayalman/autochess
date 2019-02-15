@@ -17,6 +17,14 @@ $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
 .container {
   background: $theme-color-2;
 }
+.active-filters {
+  text-transform: capitalize;
+  > div {
+    margin: 5px;
+    padding: 5px;
+    background: $theme-color-5;
+  }
+}
 
 .active-list, .all-synergies {
   background: $theme-color-2;
