@@ -1,41 +1,91 @@
 @media only screen and (max-width: 600px) {
   .container {
-    grid-template-areas:
-      "header header header header"
-      "selected-heroes selected-heroes selected-heroes active-list"
-      "active-synergies active-synergies active-synergies active-list"
-      "all-synergies all-synergies all-synergies active-list"
-      "all-heroes all-heroes all-heroes all-heroes"
+    grid-template-areas: "header header header header"
+    "side side side side"
+    "main main main main"
       "footer footer footer footer";
-    grid-template-columns: 1fr 1fr 200px 135px;
-    grid-template-rows: 60px 225px 225px 315px 1fr 80px
-  }
-  .hero {
-    flex: 0 85px !important;
-  }
-  .all-synergies {
-    background: #4A6D63 !important;
-  }
-  .active-list {
-    font-size: 14px;
-  }
-  .active-list, .all-synergies, .active-synergies {
-    > div {
-      margin-bottom: 15px;
-      padding: 3px !important;
-      box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px 1fr 3fr 80px;
+
+    .all-heroes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(19, minmax(18vw, 1fr));
+    }
+
+    .selected-heroes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, minmax(8vw, 1fr));
+    }
+
+    .active-list {
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .active-synergies,
+    .all-synergies {
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+      align-content: center;
+
+      >* {
+        &:first-child {
+          flex: 1 1 100%;
+        }
+
+        flex: 1 1 100%;
+      }
     }
   }
+
+
 }
+
 @media only screen and (min-width: 600px) {
   .container {
-    grid-template-areas:
-      "header header header header"
-      "active-list selected-heroes active-synergies all-synergies"
-      "active-list selected-heroes active-synergies all-synergies"
-      "all-heroes all-heroes all-heroes all-heroes"
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "header header header header"
+      "main main main side"
       "footer footer footer footer";
-    grid-template-columns:200px 1fr 1fr 1fr;
-    grid-template-rows: 60px 1fr 1fr 1fr 60px
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px 1fr 60px
+  }
+
+  .all-heroes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(19, minmax(5vw, 1fr));
+  }
+
+  .selected-heroes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, minmax(8vw, 1fr));
+  }
+
+  .active-list {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .active-synergies,
+  .all-synergies {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+
+    >* {
+      &:first-child {
+        flex: 1 1 100%;
+      }
+
+      flex: 0 1 45%;
+    }
   }
 }
