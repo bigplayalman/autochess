@@ -137,12 +137,12 @@ export const synergies = [
     {
         type: 'elemental',
         count: 2,
-        effect: 'All friendly elements have a 30% chance to turn the attacker into stone for 3 seconds when attacked by melee chess pieces.'
+        effect: 'All friendly elements have a 30% chance to turn the attacker into stone for 4 seconds when attacked by melee chess pieces.'
     },
     {
         type: 'elemental',
         count: 4,
-        effect: 'All allies have a 30% chance to turn the attacker into stone for 3 seconds when attacked by melee chess pieces.'
+        effect: 'All allies have a 30% chance to turn the attacker into stone for 4 seconds when attacked by melee chess pieces.'
     },
     {
         type: 'elf',
@@ -167,17 +167,17 @@ export const synergies = [
     {
         type: 'human',
         count: 2,
-        effect: 'All friendly humans have a 20% chance to disarm the target for 3s when attacking.'
+        effect: 'All friendly humans have a 20% chance to silence the target for 4s when attacking.'
     },
     {
         type: 'human',
         count: 4,
-        effect: 'All friendly humans have an additional 25% chance to disarm the target for 3s when attacking.'
+        effect: 'All friendly humans have an additional 25% chance to silence the target for 4s when attacking.'
     },
     {
         type: 'human',
         count: 6,
-        effect: 'All friendly humans have an additional 30% chance to disarm the target for 3s when attacking.'
+        effect: 'All friendly humans have an additional 30% chance to silence the target for 4s when attacking.'
     },
     {
         type: 'naga',
