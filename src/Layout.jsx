@@ -5,6 +5,7 @@ import "./Layout.scss";
 import Header from "./components/Header";
 import HeroList from "./components/Hero.list";
 import SynergyList from "./components/Synergy.list";
+import FilterList from "./components/Filter.list";
 import TypeList from "./components/Type.list";
 
 class Layout extends Component {
@@ -15,8 +16,30 @@ class Layout extends Component {
       synergies: {},
       activeSynergies: [],
       images: this.importAll(require.context('./assets', false, /\.(png|jpe?g|svg)$/)),
+      filters: this.generateFilters(),
       selectedHeroes: []
     }
+  }
+
+  generateFilters() {
+    const filters = {};
+    synergies.map(synergy => {
+      filters[synergy.type] = false;
+      return synergy;
+    });
+    return filters;
+  }
+
+  setFilter(filter) {
+    this.setState(oldState => {
+      return {
+        ...oldState,
+        filters: {
+          ...oldState.filters,
+          [filter]: !oldState.filters[filter]
+        }
+      }
+    })
   }
 
   importAll(r) {
@@ -113,7 +136,8 @@ class Layout extends Component {
       images: this.state.images,
       className: 'all-heroes',
       selectedHeroes: this.state.selectedHeroes,
-      disabled: this.state.selectedHeroes.length === 10
+      disabled: this.state.selectedHeroes.length === 10,
+      filters: this.state.filters
     }
 
     const activeSynergies = {
@@ -133,15 +157,26 @@ class Layout extends Component {
       className: 'active-list',
       types: this.state.synergies
     }
+    const filters = {
+      title: 'Active Filters',
+      className: 'active-filters',
+      filters: this.state.filters,
+      setFilter: this.setFilter.bind(this)
+    }
     return (
 
       <div className="container">
         <Header />
-        <HeroList {...selectedHeroes} />
-        <TypeList {...types} />
-        <SynergyList {...activeSynergies} />
-        <SynergyList {...allSynergies} />
-        <HeroList {...allHeroes} />
+        <div className="main">
+          <HeroList {...selectedHeroes} />
+          <TypeList {...types} />
+          <SynergyList {...activeSynergies} />
+          <SynergyList {...allSynergies} />
+        </div>
+        <div className="side">
+          <FilterList {...filters} />
+          <HeroList {...allHeroes} />
+        </div>
         <div className="footer">
           Dota 2 content and materials are trademarks and copyrights of Valve or its licensors.  This site is not affiliated with Valve.
         </div>
