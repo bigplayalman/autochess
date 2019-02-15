@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames'
 
 export const Hero = (props) => {
-  const {name, images, selectHero, portrait, selected, disabled} = props;
+  const { name, images, selectHero, portrait, selected, disabled } = props;
   const path = portrait ? portrait : `${name.toLowerCase().split(' ').join('_')}_full.png`;
   const image = images[path];
   const styles = classnames({
@@ -12,8 +12,12 @@ export const Hero = (props) => {
   })
 
   return (
-    <div className={styles} onClick={(e) => selectHero(e, props)}>
-      <img src={image} alt={name}/>
+    <div
+      className={styles}
+      style={{ 'backgroundImage': `url(${image})` }}
+      onClick={(e) => selectHero(e, props)}
+    >
+      {/* {name} */}
     </div>
   )
 }
