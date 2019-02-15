@@ -8,8 +8,7 @@ const HeroList = ({heroes, selectHero, images, className, selectedHeroes, disabl
       activeFilters.push(key);
     }
     return key;
-  })
-  console.log(activeFilters);
+  });
   const filteredHeroes = [];
   activeFilters.map(filter => {
     heroes.map(hero => {
