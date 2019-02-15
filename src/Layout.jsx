@@ -83,7 +83,7 @@ class Layout extends Component {
     console.log(synergies);
     const demonhunters = synergies.filter(x => x.type === 'demonhunter');
     const demons = heroes.filter(y => y.demon === true);
-    if (demonhunters.length === 0 && demons.length > 1) {
+    if (demonhunters.length < 2 && demons.length > 1) {
       return synergies.filter(y => y.type !== 'demon');
     }
     return synergies;
