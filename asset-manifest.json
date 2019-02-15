@@ -1,7 +1,7 @@
 {
-  "main.css": "/autochess/static/css/main.92d86e9c.chunk.css",
-  "main.js": "/autochess/static/js/main.13377040.chunk.js",
-  "main.js.map": "/autochess/static/js/main.13377040.chunk.js.map",
+  "main.css": "/autochess/static/css/main.043886c6.chunk.css",
+  "main.js": "/autochess/static/js/main.78e506fc.chunk.js",
+  "main.js.map": "/autochess/static/js/main.78e506fc.chunk.js.map",
   "static/js/1.fcb52091.chunk.js": "/autochess/static/js/1.fcb52091.chunk.js",
   "static/js/1.fcb52091.chunk.js.map": "/autochess/static/js/1.fcb52091.chunk.js.map",
   "runtime~main.js": "/autochess/static/js/runtime~main.8cea902f.js",
@@ -117,8 +117,8 @@
   "static/media/wisp_full.png": "/autochess/static/media/wisp_full.0d12031f.png",
   "static/media/witch_doctor_full.png": "/autochess/static/media/witch_doctor_full.d1cc1bec.png",
   "static/media/zuus_full.png": "/autochess/static/media/zuus_full.9c9d00d8.png",
-  "static/css/main.92d86e9c.chunk.css.map": "/autochess/static/css/main.92d86e9c.chunk.css.map",
+  "static/css/main.043886c6.chunk.css.map": "/autochess/static/css/main.043886c6.chunk.css.map",
   "index.html": "/autochess/index.html",
-  "precache-manifest.c297500531fed25a7585d0ab47c00a48.js": "/autochess/precache-manifest.c297500531fed25a7585d0ab47c00a48.js",
+  "precache-manifest.d2de52e5bcbb975c5f483ac81d26cebc.js": "/autochess/precache-manifest.d2de52e5bcbb975c5f483ac81d26cebc.js",
   "service-worker.js": "/autochess/service-worker.js"
 }
