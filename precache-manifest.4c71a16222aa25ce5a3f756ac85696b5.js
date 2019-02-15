@@ -460,7 +460,7 @@ self.__precacheManifest = [
     "url": "/autochess/static/media/zuus_full.9c9d00d8.png"
   },
   {
-    "revision": "a2e04260672bd3253ce952c06359a57d",
+    "revision": "83c4f10bf74610d2b77cae7e4c81f365",
     "url": "/autochess/index.html"
   }
 ];
