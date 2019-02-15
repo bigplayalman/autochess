@@ -137,11 +137,15 @@ class Layout extends Component {
 
       <div className="container">
         <Header />
-        <HeroList {...selectedHeroes} />
-        <TypeList {...types} />
-        <SynergyList {...activeSynergies} />
-        <SynergyList {...allSynergies} />
-        <HeroList {...allHeroes} />
+        <div className="main">
+          <HeroList {...selectedHeroes} />
+          <TypeList {...types} />
+          <SynergyList {...activeSynergies} />
+          <SynergyList {...allSynergies} />
+        </div>
+        <div className="side">
+          <HeroList {...allHeroes} />
+        </div>
         <div className="footer">
           Dota 2 content and materials are trademarks and copyrights of Valve or its licensors.  This site is not affiliated with Valve.
         </div>
