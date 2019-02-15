@@ -135,12 +135,12 @@ export const synergies = [
         effect: 'All friendly dragons have 100 mana when the battle starts.'
     },
     {
-        type: 'element',
+        type: 'elemental',
         count: 2,
         effect: 'All friendly elements have a 30% chance to turn the attacker into stone for 3 seconds when attacked by melee chess pieces.'
     },
     {
-        type: 'element',
+        type: 'elemental',
         count: 4,
         effect: 'All allies have a 30% chance to turn the attacker into stone for 3 seconds when attacked by melee chess pieces.'
     },
