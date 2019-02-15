@@ -12,4 +12,7 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  &:hover {
+    opacity: .3;
+  }
 }
