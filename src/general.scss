@@ -3,6 +3,8 @@ $theme-color-2: #4D5B6C;
 $theme-color-3: #081320;
 $theme-color-4: #4A6D63;
 $theme-color-5: #C9B89C;
+$theme-green-dark: #565c32;
+$theme-green-light: #7a8545;
 $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
 
 .header, .footer {
@@ -64,4 +66,11 @@ $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
   > * {
     margin: 10px;
   }
+}
+
+.dark-green-square {
+  background: $theme-green-dark
+}
+.light-green-square {
+  background: $theme-green-light
 }
