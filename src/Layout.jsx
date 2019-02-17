@@ -7,6 +7,7 @@ import HeroList from "./components/Hero.list";
 import SynergyList from "./components/Synergy.list";
 import FilterList from "./components/Filter.list";
 import TypeList from "./components/Type.list";
+import Chessboard from "./components/Chessboard";
 
 class Layout extends Component {
   constructor(props) {
@@ -132,14 +133,6 @@ class Layout extends Component {
     });
   }
   render() {
-    const selectedHeroes = {
-      heroes: this.state.selectedHeroes,
-      selectHero: this.removeHero.bind(this),
-      images: this.state.images,
-      className: 'selected-heroes',
-      selectedHeroes: [],
-      disabled: false
-    }
     const allHeroes = {
       heroes: this.state.heroes,
       selectHero: this.selectHero.bind(this),
@@ -178,7 +171,7 @@ class Layout extends Component {
       <div className="container">
         <Header />
         <div className="main">
-          <HeroList {...selectedHeroes} />
+          <Chessboard heroes={this.state.selectedHeroes} />
           <TypeList {...types} />
           <SynergyList {...activeSynergies} />
           <SynergyList {...allSynergies} />
