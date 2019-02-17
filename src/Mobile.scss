@@ -62,10 +62,10 @@
     grid-template-rows: repeat(19, minmax(5vw, 1fr));
   }
 
-  .selected-heroes {
+  .chessboard {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, minmax(8vw, 1fr));
+    grid-template-columns: repeat(8, minmax(8vw, 1fr));
+    grid-template-rows: repeat(4, minmax(8vw, 1fr));
   }
 
   .active-list {
