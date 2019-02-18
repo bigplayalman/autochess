@@ -166,12 +166,15 @@ class Layout extends Component {
       filters: this.state.filters,
       setFilter: this.setFilter.bind(this)
     }
+
+    const heroes = this.state.selectedHeroes.map(hero => {return hero.name});
+
     return (
 
       <div className="container">
         <Header />
         <div className="main">
-          <Chessboard heroes={this.state.selectedHeroes} />
+          <Chessboard heroes={heroes} images={this.state.images} />
           <TypeList {...types} />
           <SynergyList {...activeSynergies} />
           <SynergyList {...allSynergies} />
