@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/static/media/mirana_full.c56ceee8.png"
   },
   {
-    "revision": "bbcd98dc524518dbbb45",
-    "url": "/static/css/main.b9c4d137.chunk.css"
+    "revision": "c8ab23dd3fced737a359",
+    "url": "/static/css/main.4b6c88f8.chunk.css"
   },
   {
-    "revision": "fcb5209118c2d99bace7",
-    "url": "/static/js/1.fcb52091.chunk.js"
+    "revision": "fdfcfda2d9b1bf31db52",
+    "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "229c360febb4351a89df",
-    "url": "/static/js/runtime~main.229c360f.js"
+    "revision": "dc6282db73220f3fee15",
+    "url": "/static/js/2.dc6282db.chunk.js"
   },
   {
     "revision": "50062f25b4d79a54a118abfa55fd9a25",
@@ -232,8 +232,8 @@ self.__precacheManifest = [
     "url": "/static/media/meepo_full.ae16eab5.png"
   },
   {
-    "revision": "bbcd98dc524518dbbb45",
-    "url": "/static/js/main.bbcd98dc.chunk.js"
+    "revision": "c8ab23dd3fced737a359",
+    "url": "/static/js/main.c8ab23dd.chunk.js"
   },
   {
     "revision": "fae37a912af223cc7593af04d09e7001",
@@ -460,7 +460,7 @@ self.__precacheManifest = [
     "url": "/static/media/zuus_full.9c9d00d8.png"
   },
   {
-    "revision": "4bec4dbbfb21d0515d8a703abb2211af",
+    "revision": "c7ab2e17eeed5da5676a1762fe9ea505",
     "url": "/index.html"
   }
 ];
