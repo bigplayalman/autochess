@@ -6,6 +6,12 @@
       "footer footer footer footer";
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
+    .chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(8vw, 1fr));
+      grid-template-rows: repeat(4, minmax(8vw, 1fr));
+    }
+
     .all-heroes {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -84,7 +90,7 @@
         flex: 1 1 100%;
       }
 
-      flex: 0 1 45%;
+      flex: 0 1 calc(50% - 30px);
     }
   }
 }
