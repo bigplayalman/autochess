@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { heroes } from './heroes';
 import { synergies } from './synergies';
 import "./Layout.scss";
 import Header from "./components/Header";
