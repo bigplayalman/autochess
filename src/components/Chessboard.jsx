@@ -15,31 +15,33 @@ class Chessboard extends Component {
     }
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const positionHeroes = (heroes, squares) => {
-      let heroIndex = 0;
-      const maxHero = heroes.length;
-      Object.keys(squares).map(square => {
-        if (squares[square].hero === null) {
-          if (heroIndex < maxHero) {
-            squares[square].hero = heroes[heroIndex];
-            heroIndex++;
-          }
-        }
-        return square;
-      });
-      return squares;
-    }
-    const heroes = difference(nextProps.heroes, prevState.heroes);
+  componentWillUpdate(nextProps, nextState) {
+    const heroes = difference(nextProps.heroes, this.props.heroes);
     if (heroes.length) {
-      const squares = positionHeroes(heroes, prevState.squares);
-      return {
-        ...prevState,
-        heroes: nextProps.heroes,
-        squares
-      }
+      const squares = this.positionHeroes(nextProps.heroes, nextState.squares);
+      this.setState(oldState => {
+        return {
+          ...oldState,
+          heroes: nextProps.heroes,
+          squares
+        }
+      })
     }
-    return prevState;
+  }
+
+  positionHeroes = (heroes, squares) => {
+    let heroIndex = 0;
+    const maxHero = heroes.length;
+    Object.keys(squares).map(square => {
+      if (squares[square].hero === null) {
+        if (heroIndex < maxHero) {
+          squares[square].hero = heroes[heroIndex];
+          heroIndex++;
+        }
+      }
+      return square;
+    });
+    return squares;
   }
 
   generateChessboard() {
@@ -126,6 +128,7 @@ class Chessboard extends Component {
       onDragOver: this.onDragOver.bind(this),
       onDrag: this.onDrag.bind(this)
     }
+    console.log(this.state)
     return (
       <div className="chessboard">
         {
