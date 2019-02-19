@@ -6,10 +6,13 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "gh-pages": "^2.0.1",
+    "history": "^4.7.2",
     "lodash.difference": "^4.5.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-scripts": "^2.1.5"
+    "react-scripts": "^2.1.5",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
