@@ -7,7 +7,7 @@ $theme-green-dark: #565c32;
 $theme-green-light: #7a8545;
 $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
 
-.header, .footer {
+header, footer {
   background: $theme-color-1;
   color: white;
   strong {
@@ -16,61 +16,20 @@ $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
   }
 }
 
-.container {
+main {
   background: $theme-color-2;
 }
-.active-filters {
-  text-transform: capitalize;
-  > div {
-    margin: 5px;
-    padding: 5px;
-    background: $theme-color-5;
-    &:hover {
-      box-shadow: $theme-inset-shadow;
-      background: $theme-color-4;
+.chessboard {
+  > * {
+    background-color: $theme-green-light;
+  }
+
+  > * {
+    @each $offset in 2 4 6 8 9 11 13 15 {
+      &:nth-child(16n + #{$offset}) {
+        background-color: $theme-green-dark;
+      }
     }
   }
-}
 
-.active-list, .all-synergies {
-  background: $theme-color-2;
-  color: white;
-}
-.all-heroes {
-  background: $theme-color-3;
-}
-
-.selected-heroes {
-  background: $theme-color-3;
-  box-shadow: $theme-inset-shadow
-}
-.active-synergies {
-  background: white;
-  box-shadow: $theme-inset-shadow
-}
-
-.active-list, .all-synergies, .active-synergies {
-  text-transform: capitalize;
-  > div {
-    padding: 5px;
-    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
-  }
-  .selected {
-    color: $theme-color-1;
-    font-weight: 500;
-  }
-}
-
-.active-list, .active-synergies, .all-synergies {
-  padding: 10px;
-  > * {
-    margin: 10px;
-  }
-}
-
-.dark-green-square {
-  background: $theme-green-dark
-}
-.light-green-square {
-  background: $theme-green-light
 }

@@ -1,15 +1,13 @@
 import {
   heroes
-} from '../../heroes';
+} from '../data/heroes';
 // region Action Types
 const SET_HERO = 'hero/SET';
-
-
 // endregion
 
 // region initialState
 const initialState = {
-  heroes
+  ...heroes
 };
 // endregion
 
@@ -18,12 +16,9 @@ const reducer = (state = initialState, action = {}) => {
 
   switch (action.type) {
     case SET_HERO:
-      const key = Object.keys(action.res)[0];
       return {
         ...state,
-        [key]: {
-          ...action.res
-        }
+        ...action.res
       }
     default:
       return state;
@@ -34,7 +29,7 @@ const reducer = (state = initialState, action = {}) => {
 // region Actions
 const setData = (prop) => {
   return {
-    type: SET_DATA,
+    type: SET_HERO,
     res: prop
   };
 }
@@ -48,15 +43,57 @@ const setHero = (hero) => {
   }
 }
 
+const selectHero = (name) => {
+  return (dispatch, getState) => {
+    const heroes = getState().heroes;
+    if (heroes[name].position) {
+      const hero = {
+        ...heroes[name],
+        position: null
+      }
+      dispatch(setData({[name]: hero}))
+    } else {
+      const currentPositions = [];
+      Object.keys(heroes).map(hero => {
+        if(heroes[hero].position) {
+          currentPositions.push(heroes[hero].position);
+        }
+        return hero;
+      });
+
+      if (currentPositions.length === 10) {
+        return;
+      }
+
+      const filterPositions = (position) => {
+        return currentPositions.filter(x => x === parseInt(position));
+      }
+
+      for(var i = 1; i <= 32; i++) {
+        if (!filterPositions(i).length) {
+          const hero = {
+            ...heroes[name],
+            position: i
+          }
+          dispatch(setData({[name]: hero}));
+          break;
+        }
+      }
+    }
+
+  }
+}
+
 // endregion
 
 // region Exports
 const actionTypes = {
-  SET_DATA,
+  SET_HERO,
 };
 
 const actionCreators = {
-  setHero
+  setHero,
+  selectHero
 };
 
 export {
