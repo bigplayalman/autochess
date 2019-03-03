@@ -34,7 +34,6 @@ export class HeroList extends Component {
     }
   }
   render() {
-    console.log(this.props);
     const { heroes } = this.props;
     return (
       <div className="hero-list">

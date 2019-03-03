@@ -1,7 +1,7 @@
 @import "./heroes.scss";
 @import "./general.scss";
-$chess-square-size: 12.5vw;
-$chess-square-width: 10.5vw;
+$chess-square-size: minmax(100px, 125px);
+$chess-square-width: 100px;
 
 html, body, .container {
   width: 100%;
@@ -14,12 +14,12 @@ html, body, .container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 60px 1fr 60px;
+  overflow: scroll;
 }
 
 main {
   display: flex;
   flex-flow: row wrap;
-  justify-items: center;
 }
 
 .chessboard {
