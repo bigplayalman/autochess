@@ -43,6 +43,19 @@ const setHero = (hero) => {
   }
 }
 
+const updateHero = (name, position) => {
+  return (dispatch, getState) => {
+    const state = getState().heroes;
+    const hero = {
+      [name]: {
+        ...state[name],
+        position: position
+      }
+    }
+    dispatch(setData(hero));
+  }
+}
+
 const selectHero = (name) => {
   return (dispatch, getState) => {
     const heroes = getState().heroes;
@@ -93,7 +106,8 @@ const actionTypes = {
 
 const actionCreators = {
   setHero,
-  selectHero
+  selectHero,
+  updateHero
 };
 
 export {
