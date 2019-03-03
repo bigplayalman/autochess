@@ -20,6 +20,9 @@ main {
   background: $theme-color-2;
 }
 .chessboard {
+  .square {
+    display: flex;
+  }
   > * {
     background-color: $theme-green-light;
   }

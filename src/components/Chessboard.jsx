@@ -1,31 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Hero } from "./Hero";
+import DragContainer from "./DragContainer";
+import { actionCreators as heroStore } from "../store/services/hero.service";
+import Square from "./Square";
 
 class Chessboard extends Component {
   getHeroImage(hero) {
     const image = this.props.images[`${hero.toLowerCase().split(' ').join('_')}_full.png`];
     return image;
   }
+  renderHero(position) {
+    const hero = this.getHero(position);
+    if (hero) {
+      return <DragContainer name={hero} image={this.getHeroImage(hero)} />
+    }
+  }
+  updatePosition(hero, position) {
+    this.props.updateHero(hero, position);
+  }
   generateSquares() {
     const squares = [];
     for (var i = 1; i <= 32; i++) {
-      const hero = this.getHero(i);
-      if (hero) {
-        squares.push(
-          <Hero key={`${hero}-board`}
-            name={hero}
-            selected={false}
-            disabled={false}
-            image={this.getHeroImage(hero)}
-            selectHero={() => { }}
-          />
-        )
-      } else {
-        squares.push(<div key={i}>{i}</div>)
-      }
-
-    }
+      squares.push(
+        <Square key={i} position={i} updatePosition={this.updatePosition.bind(this)}>
+          {this.renderHero(i)}
+        </Square>
+      )
+    };
     return squares;
   }
 
@@ -42,11 +43,13 @@ class Chessboard extends Component {
 
   render() {
     return (
+
       <div className="chessboard">
         {
           this.generateSquares()
         }
       </div>
+
     )
   }
 };
@@ -62,7 +65,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    // selectHero: (hero) => dispatch(heroStore.selectHero(hero))
+    updateHero: (hero, position) => dispatch(heroStore.updateHero(hero, position))
   });
 };
 const ChessboardConnected = connect(mapStateToProps, mapDispatchToProps)(Chessboard);
