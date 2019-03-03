@@ -7,18 +7,33 @@ const squareTarget = {
     props.updatePosition(item.name, props.position);
   },
   canDrop(props) {
-    return !props.children;
+    return props.children === undefined;
   }
 };
 
 function collect(connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget(),
-    isOver: monitor.isOver()
+    isOver: monitor.isOver(),
+    canDrop: monitor.canDrop()
   };
 }
 
-function Square({ connectDropTarget, isOver, children }) {
+function Square({ connectDropTarget, isOver, canDrop, children }) {
+  const renderOverlay = (color) => {
+    return (
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        height: '100%',
+        width: '100%',
+        zIndex: 1,
+        opacity: 0.2,
+        backgroundColor: color,
+      }} />
+    );
+  }
   return connectDropTarget(
     <div className="square" style={{
       position: 'relative',
@@ -26,18 +41,9 @@ function Square({ connectDropTarget, isOver, children }) {
       height: '100%'
     }}>
       {children}
-      {isOver &&
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          height: '100%',
-          width: '100%',
-          zIndex: 1,
-          opacity: 0.5,
-          backgroundColor: 'yellow',
-        }} />
-      }
+      {isOver && !canDrop && renderOverlay('red')}
+      {!isOver && canDrop && renderOverlay('yellow')}
+      {isOver && canDrop && renderOverlay('green')}
     </div>
   );
 }
