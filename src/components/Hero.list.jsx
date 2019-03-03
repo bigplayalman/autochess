@@ -1,40 +1,75 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Hero } from "./Hero";
+import { actionCreators as heroStore } from "../store/services/hero.service";
 
-const HeroList = ({heroes, selectHero, images, className, selectedHeroes, disabled, filters = {}}) => {
-  const activeFilters = [];
-  Object.keys(filters).map((key) => {
-    if (filters[key]) {
-      activeFilters.push(key);
-    }
-    return key;
-  });
-  const filteredHeroes = [];
-  activeFilters.map(filter => {
-    heroes.map(hero => {
-      if(hero[filter]) {
-        filteredHeroes.push(hero);
+export class HeroList extends Component {
+  getHeroImage(hero) {
+    const image = this.props.images[`${hero.toLowerCase().split(' ').join('_')}_full.png`];
+    return image;
+  }
+
+  selectHero(hero) {
+    this.props.selectHero(hero);
+
+  }
+  isHeroSelected(hero) {
+    return this.props.heroes[hero].position !== null;
+  }
+
+  getSelectedHeroes() {
+    const selected = [];
+    Object.keys(this.props.heroes).map(hero => {
+      if (this.props.heroes[hero].position) {
+        selected.push(hero)
       }
       return hero;
-    })
-    return filter;
-  })
+    });
+    return selected;
+  }
 
-  const activeHeroes = filteredHeroes.length ? filteredHeroes : heroes;
-  return (
-    <div className={className}>
-      {activeHeroes.map((hero, index) => {
-        const props = {
-          ...hero,
-          images,
-          selectHero,
-          selected: selectedHeroes.filter(x => x.name === hero.name).length,
-          disabled
-        };
-        return <Hero key={`${hero.name}-${index}-${className}`} {...props} />;
-      })}
-    </div>
-  );
+  isHeroDisabled(hero) {
+    if (!this.isHeroSelected(hero)) {
+      return this.getSelectedHeroes().length === 10;
+    }
+  }
+  render() {
+    console.log(this.props);
+    const { heroes } = this.props;
+    return (
+      <div className="hero-list">
+        {
+          Object.keys(heroes).map(hero => {
+            return (
+              <Hero key={`${hero}-list`}
+                name={hero}
+                selected={this.isHeroSelected(hero)}
+                disabled={this.isHeroDisabled(hero)}
+                image={this.getHeroImage(hero)}
+                selectHero={this.selectHero.bind(this)}
+              />
+            )
+          })
+        }
+      </div>
+    );
+  }
 };
 
-export default HeroList;
+const getData = (state, store) => state[store];
+
+const mapStateToProps = (state) => {
+  return {
+    heroes: getData(state, 'heroes'),
+    synergies: getData(state, 'synergies'),
+    images: getData(state, 'images')
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    selectHero: (hero) => dispatch(heroStore.selectHero(hero))
+  });
+};
+const HeroListConnected = connect(mapStateToProps, mapDispatchToProps)(HeroList);
+export default HeroListConnected;

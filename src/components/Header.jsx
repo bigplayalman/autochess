@@ -2,11 +2,11 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="header">
+    <header>
       <strong>
         Dota Auto Chess Synergy
       </strong>
-    </div>
+    </header>
   );
 };
 
