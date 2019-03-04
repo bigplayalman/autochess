@@ -17,6 +17,11 @@ header, footer {
     display: block;
   }
 }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 
 main {
   background: $theme-color-2;
