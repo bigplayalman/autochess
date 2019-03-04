@@ -33,6 +33,8 @@ main {
   display: grid;
   grid-template-columns: repeat(8, $chess-square-size);
   grid-auto-rows: $chess-square-width;
+  position: sticky;
+  bottom: -60vh;
 }
 .synergy-list {
   display: grid;
