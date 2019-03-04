@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/static/media/mirana_full.c56ceee8.png"
   },
   {
-    "revision": "c8ab23dd3fced737a359",
-    "url": "/static/css/main.4b6c88f8.chunk.css"
+    "revision": "5671d278b24980229c45",
+    "url": "/static/css/main.3a6abc86.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "dc6282db73220f3fee15",
-    "url": "/static/js/2.dc6282db.chunk.js"
+    "revision": "c57e830311789eb54690",
+    "url": "/static/js/2.c57e8303.chunk.js"
   },
   {
     "revision": "50062f25b4d79a54a118abfa55fd9a25",
@@ -232,8 +232,8 @@ self.__precacheManifest = [
     "url": "/static/media/meepo_full.ae16eab5.png"
   },
   {
-    "revision": "c8ab23dd3fced737a359",
-    "url": "/static/js/main.c8ab23dd.chunk.js"
+    "revision": "5671d278b24980229c45",
+    "url": "/static/js/main.5671d278.chunk.js"
   },
   {
     "revision": "fae37a912af223cc7593af04d09e7001",
@@ -305,7 +305,7 @@ self.__precacheManifest = [
   },
   {
     "revision": "50e58176bbb2276c4c0ccb7985fc04c6",
-    "url": "/static/media/riki_full.50e58176.png"
+    "url": "/static/media/rikimaru_full.50e58176.png"
   },
   {
     "revision": "627035ee5e801296ce43c1a6c5d57b18",
@@ -460,7 +460,7 @@ self.__precacheManifest = [
     "url": "/static/media/zuus_full.9c9d00d8.png"
   },
   {
-    "revision": "c7ab2e17eeed5da5676a1762fe9ea505",
+    "revision": "5e04b50211bf2c2377de6db39932fa56",
     "url": "/index.html"
   }
 ];
