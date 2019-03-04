@@ -39,7 +39,7 @@ const activateSynergies = (synergies, actives) => {
     if (actives[active] < 1) {
       synergies[active].active = false;
     } else {
-      if (active === 'demon') {
+      if (active === 'demon' && actives['demon'] >= 2) {
         synergies[active].active = actives['demonhunter'] && actives['demonhunter'] >= 2;
       } else {
         synergies[active].active = true;
