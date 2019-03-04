@@ -30,7 +30,7 @@ class SynergyList extends Component {
   getActives = (actives) => {
     const activeSynergies = [];
     Object.keys(actives).map(active => {
-      if (actives[active]) {
+      if (actives[active] && this.props.synergies.synergies[active].active) {
         activeSynergies.push(
           <div className="synergy-item" key={`${active}-perks`}>
             <div className="synergy-item-header">
