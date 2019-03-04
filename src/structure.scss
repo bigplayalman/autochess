@@ -20,6 +20,7 @@ html, body, .container {
 main {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 .chessboard {
@@ -32,4 +33,34 @@ main {
   display: grid;
   grid-template-columns: repeat(8, $chess-square-size);
   grid-auto-rows: $chess-square-width;
+}
+.synergy-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.synergy-item {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+}
+.synergy-item-header {
+  display: flex;
+  flex-flow: column wrap;
+  .title {
+    width: 100%;
+    padding: 3px 5px;
+    flex-grow: 0;
+  }
+  .synergy-item-count {
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.synergy-item-body {
+  display: flex;
+  flex-flow: column wrap;
+  > * {
+    flex: 1 1;
+  }
 }

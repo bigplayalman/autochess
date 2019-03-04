@@ -1,6 +1,9 @@
 import {
   heroes
 } from '../data/heroes';
+import {
+  actionCreators as synergyStore
+} from "./synergy.service";
 // region Action Types
 const SET_HERO = 'hero/SET';
 // endregion
@@ -64,11 +67,21 @@ const selectHero = (name) => {
         ...heroes[name],
         position: null
       }
-      dispatch(setData({[name]: hero}))
+      dispatch(setData({
+        [name]: hero
+      }))
+      const synergies = [];
+      Object.keys(heroes[name]).map(prop => {
+        if (heroes[name][prop] === true) {
+          synergies.push(prop)
+        }
+        return prop;
+      })
+      dispatch(synergyStore.removeSynergies(synergies))
     } else {
       const currentPositions = [];
       Object.keys(heroes).map(hero => {
-        if(heroes[hero].position) {
+        if (heroes[hero].position) {
           currentPositions.push(heroes[hero].position);
         }
         return hero;
@@ -82,16 +95,26 @@ const selectHero = (name) => {
         return currentPositions.filter(x => x === parseInt(position));
       }
 
-      for(var i = 1; i <= 32; i++) {
+      for (var i = 1; i <= 32; i++) {
         if (!filterPositions(i).length) {
           const hero = {
             ...heroes[name],
             position: i
           }
-          dispatch(setData({[name]: hero}));
+          dispatch(setData({
+            [name]: hero
+          }));
           break;
         }
       }
+      const synergies = [];
+      Object.keys(heroes[name]).map(prop => {
+        if (heroes[name][prop] === true) {
+          synergies.push(prop)
+        }
+        return prop;
+      })
+      dispatch(synergyStore.addSynergies(synergies))
     }
 
   }

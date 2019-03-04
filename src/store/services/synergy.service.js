@@ -7,6 +7,7 @@ const SET_SYNERGY = 'synergy/SET'
 
 // region initialState
 const initialState = {
+  actives: {},
   synergies
 };
 // endregion
@@ -18,9 +19,7 @@ const reducer = (state = initialState, action = {}) => {
     case SET_SYNERGY:
       return {
         ...state,
-        synergies: {
-          ...action.res,
-        }
+        ...action.res
       }
     default:
       return state;
@@ -35,47 +34,57 @@ const setSynergy = (prop) => {
 // endregion
 
 // region Action Creators
-const updateSynergies = (list) => {
+const activateSynergies = (synergies, actives) => {
+  Object.keys(actives).map(active => {
+    if (actives[active] < 1) {
+      synergies[active].active = false;
+    } else {
+      if (active === 'demon') {
+        synergies[active].active = actives['demonhunter'] && actives['demonhunter'] >= 2;
+      } else {
+        synergies[active].active = true;
+      }
+    }
+    return active;
+  });
+  return synergies;
+}
+
+const addSynergies = (actives) => {
   return (dispatch, getState) => {
-    const synergies = {...getState().synergies};
-    Object.keys(list).map(item => {
-      Object.keys(synergies[item]).map(synergy => {
-        synergies[item].active = parseInt(synergy) >= list[item];
-        return synergy;
-      });
-      return item;
-    })
-    dispatch(setSynergy(synergies))
+    const state = {...getState().synergies};
+    actives.map(active => {
+      if(state.actives[active]) {
+        state.actives[active]++;
+      } else {
+        state.actives[active] = 1;
+      }
+      return active;
+    });
+    state.synergies = activateSynergies(state.synergies, state.actives);
+    dispatch(setSynergy(state));
   }
 }
 
-// const conditionalSynergies = (synergies, heroes) => {
-//   const demonhunters = synergies.filter(x => x.type === 'demonhunter');
-//   const demons = heroes.filter(y => y.demon === true);
-//   if (demonhunters.length < 2 && demons.length > 1) {
-//     return synergies.filter(y => y.type !== 'demon');
-//   }
-//   return synergies;
-// }
-
-// const getActiveSynergies = (actives) => {
-//   const activeSynergies = [];
-//   synergies.map(synergy => {
-//     if (actives[synergy.type] && actives[synergy.type] >= synergy.count) {
-//       activeSynergies.push(synergy);
-//     }
-//     return synergy;
-//   })
-//   return activeSynergies;
-// }
-// endregion
+const removeSynergies = (actives) => {
+  return (dispatch, getState) => {
+    const state = {...getState().synergies};
+    actives.map(active => {
+      state.actives[active]--;
+      return active;
+    });
+    state.synergies = activateSynergies(state.synergies, state.actives);
+    dispatch(setSynergy(state));
+  }
+}
 
 // region Exports
 const actionTypes = {
 };
 
 const actionCreators = {
-  updateSynergies
+  addSynergies,
+  removeSynergies
 };
 
 export {
