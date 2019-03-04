@@ -19,8 +19,11 @@ html, body, .container {
 
 main {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  > * {
+    flex: 1 1;
+  }
 }
 
 .chessboard {
@@ -34,7 +37,7 @@ main {
   grid-template-columns: repeat(8, $chess-square-size);
   grid-auto-rows: $chess-square-width;
   position: sticky;
-  bottom: -60vh;
+  bottom: -70vh;
 }
 .synergy-list {
   display: grid;
