@@ -3,6 +3,7 @@ import "./structure.scss";
 import Header from "./components/Header";
 import Chessboard from "./components/Chessboard";
 import HeroList from "./components/Hero.list";
+import SynergyList from "./components/Synergy.list";
 
 export const Layout = () => {
   return (
@@ -10,6 +11,7 @@ export const Layout = () => {
       <Header />
       <main>
         <Chessboard />
+        <SynergyList />
         <HeroList />
       </main>
       <footer>
