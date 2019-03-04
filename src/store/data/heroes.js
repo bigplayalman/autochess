@@ -276,5 +276,20 @@ export const heroes = {
     "position": null,
     "troll": true,
     "warlock": true
+  },
+  "Death Prophet": {
+    "position": null,
+    "undead": true,
+    "warlock": true
+  },
+  "Mirana": {
+    "position": null,
+    "elf": true,
+    "hunter": true
+  },
+  "Rikimaru": {
+    "position": null,
+    "satyr": true,
+    "assasin": true
   }
 }

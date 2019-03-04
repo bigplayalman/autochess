@@ -8,10 +8,12 @@ $theme-green-light: #7a8545;
 $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
 
 header, footer {
+  display: flex;
+  align-items: center;
   background: $theme-color-1;
   color: white;
   strong {
-    margin: 0;
+    padding-left: 10px;
     display: block;
   }
 }
@@ -35,4 +37,31 @@ main {
     }
   }
 
+}
+.synergy-item {
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.synergy-item-header {
+  .title {
+    text-transform: capitalize;
+    border-bottom: 2px solid $theme-color-1;
+    font-weight: bold;
+  }
+  .synergy-item-count {
+    font-size: 2.5rem;
+  }
+}
+.synergy-item-body {
+  border-left: 2px solid $theme-color-1;
+}
+.active-synergy {
+  padding: 5px;
+  background: lightgreen;
+}
+.missing-synergy {
+  padding: 5px;
+  background: lightcoral;
 }

@@ -2,6 +2,7 @@ export const synergies = {
   assasin: {
     3: 'All friendly assassins have a 10% chance to deal 3.5x damage',
     6: 'All friendly assassins have an additional 20% chance to deal 4.5x damage',
+    9: 'All friendly assassins have an additional 20% chance to deal 5x damage.',
     active: false
   },
   demonhunter: {
@@ -16,13 +17,13 @@ export const synergies = {
   },
   hunter: {
     3:'Attack damage increased by 25% for all friendly hunters.',
-    6: 'Attack damage increased by an additional 35% for all friendly hunters.',
+    6: 'Attack damage increased by an additional 25% for all friendly hunters.',
     active: false
   },
   knight: {
-    2: 'All friendly knights have a 25% chance to trigger a damage-reduction shield when attacked.',
-    4: 'All friendly knights have a 35% chance to trigger a damage-reduction shield when attacked.',
-    6: 'All friendly knights have a 45% chance to trigger a damage-reduction shield when attacked.',
+    2: 'All friendly knights have a 30% chance to trigger a damage-reduction shield when attacked.',
+    4: 'All friendly knights have a 30% (51% total) chance to trigger a damage-reduction shield when attacked.',
+    6: 'All friendly knights have a 30% (65% total) chance to trigger a damage-reduction shield when attacked.',
     active: false
   },
   mage: {
@@ -76,9 +77,10 @@ export const synergies = {
   elf: {
     3: 'Evasion increased by 25% for all friendly elves.',
     6: 'Evasion increased by an additional 25% for all friendly elves.',
+    9: 'Evasion increased by an additional 25% for all friendly elves.',
     active: false
   },
-  golbin: {
+  goblin: {
     3: 'Armor and HP regeneration increased by 15 for a random ally.',
     6: 'Armor and HP regeneration increased by 15 for all friendly goblins.',
     active: false
@@ -90,8 +92,8 @@ export const synergies = {
     active: false
   },
   naga: {
-    2: 'Magic resistance increased by 20% for all allies.',
-    4: 'Magic resistance increased by an additional 40% for all allies.',
+    2: 'Magic resistance increased by 30% for all allies.',
+    4: 'Magic resistance increased by an additional 30% for all allies.',
     active: false
   },
   ogre: {
@@ -99,18 +101,24 @@ export const synergies = {
     active: false
   },
   orc: {
-    2: 'Max health points increased by 250 for all friendly orcs.',
-    4: 'Max health points increased by an additional 350 for all friendly orcs.',
+    2: 'Max health points increased by 200 for all friendly orcs.',
+    4: 'Max health points increased by an additional 300 for all friendly orcs.',
+    6: 'Max health points increased by an additional 400 for all friendly orcs',
     active: false
   },
   troll: {
-    2: 'Attack speed increased by 30% for all friendly trolls.',
+    2: 'Attack speed increased by 35% for all friendly trolls.',
     4: 'Attack speed increased by 30% for all allies.',
     active: false
   },
   undead: {
-    2: 'Armor decreased by 5 for all enemies.',
-    4: 'Armor decreased by 7 for all enemies.',
+    2: 'Armor decreased by 4 for all enemies.',
+    4: 'Armor decreased by 6 for all enemies.',
+    6: 'Armor decreased by 7 for all enemies.',
+    active: false
+  },
+  satyr: {
+    1: 'Hides your bench from the enemy vision as long as a satyr is on your bench.',
     active: false
   }
 }
