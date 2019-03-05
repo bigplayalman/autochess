@@ -17,7 +17,7 @@ export const synergies = {
   },
   hunter: {
     3:'Attack damage increased by 25% for all friendly hunters.',
-    6: 'Attack damage increased by an additional 25% for all friendly hunters.',
+    6: 'Attack damage increased by an additional 30% for all friendly hunters.',
     active: false
   },
   knight: {
@@ -75,14 +75,14 @@ export const synergies = {
     active: false
   },
   elf: {
-    3: 'Evasion increased by 25% for all friendly elves.',
+    3: 'Evasion increased by 20% for all friendly elves.',
     6: 'Evasion increased by an additional 25% for all friendly elves.',
-    9: 'Evasion increased by an additional 25% for all friendly elves.',
+    9: 'Evasion increased by an additional 30% for all friendly elves.',
     active: false
   },
   goblin: {
     3: 'Armor and HP regeneration increased by 15 for a random ally.',
-    6: 'Armor and HP regeneration increased by 15 for all friendly goblins.',
+    6: 'Armor and HP regeneration increased by 15 for all allies.',
     active: false
   },
   human: {
