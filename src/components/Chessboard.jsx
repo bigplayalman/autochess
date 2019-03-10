@@ -18,16 +18,29 @@ class Chessboard extends Component {
   updatePosition(hero, position) {
     this.props.updateHero(hero, position);
   }
+
+  splitToChunks(array, parts) {
+    let result = [];
+    for (let i = parts; i > 0; i--) {
+      let newArray = array.splice(0, Math.ceil(array.length / i));
+      if (1 % 2 !== 0) {
+        newArray = newArray.reverse();
+      }
+      result.push(newArray);
+    }
+    console.log(result);
+    return result;
+  }
   generateSquares() {
     const squares = [];
     for (var i = 1; i <= 32; i++) {
-      squares.push(
+      squares.unshift(
         <Square key={i} position={i} updatePosition={this.updatePosition.bind(this)}>
           {this.renderHero(i)}
         </Square>
       )
     };
-    return squares;
+    return this.splitToChunks(squares, 4);
   }
 
   getHero(position) {
@@ -58,7 +71,7 @@ const getData = (state, store) => state[store];
 
 const mapStateToProps = (state) => {
   return {
-    heroes: getData(state, 'heroes'),
+    heroes: getData(state, 'heroes').heroes,
     images: getData(state, 'images')
   };
 };

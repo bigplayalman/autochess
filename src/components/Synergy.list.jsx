@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { actionCreators as heroStore } from "../store/services/hero.service";
 
 class SynergyList extends Component {
   displaySynergies = (synergy, count) => {
@@ -27,26 +26,21 @@ class SynergyList extends Component {
     });
     return activeSynergies;
   }
+
   getActives = (actives) => {
     const activeSynergies = [];
     Object.keys(actives).map(active => {
       if (actives[active] && this.props.synergies.synergies[active].active) {
         activeSynergies.push(
           <div className="synergy-item" key={`${active}-perks`}>
-            <div className="synergy-item-header">
-              <div className="title">
-                {active}
-              </div>
-              <div className="synergy-item-count">
-                <div>
-                  {actives[active]}
-                </div>
+            <div className="synergy-item-count">
+              <div>
+                {actives[active]}
               </div>
             </div>
-            <div className="synergy-item-body">
+            {/* <div className="synergy-item-body">
               {this.displaySynergies(active, actives[active])}
-            </div>
-
+            </div> */}
           </div>
         );
       }
@@ -67,7 +61,7 @@ const getData = (state, store) => state[store];
 
 const mapStateToProps = (state) => {
   return {
-    heroes: getData(state, 'heroes'),
+    heroes: getData(state, 'heroes').heroes,
     synergies: getData(state, 'synergies')
   };
 };

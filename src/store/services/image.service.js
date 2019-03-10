@@ -8,8 +8,6 @@ const importAll = (r) => {
 }
 const images = importAll(require.context('../../assets', false, /\.(png|jpe?g|svg)$/))
 
-
-
 // endregion
 
 // region initialState
