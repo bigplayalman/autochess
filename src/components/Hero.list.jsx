@@ -36,21 +36,28 @@ export class HeroList extends Component {
   render() {
     const { heroes } = this.props;
     return (
-      <div className="hero-list">
+      <React.Fragment>
         {
-          Object.keys(heroes).map(hero => {
-            return (
-              <Hero key={`${hero}-list`}
-                name={hero}
-                selected={this.isHeroSelected(hero)}
-                disabled={this.isHeroDisabled(hero)}
-                image={this.getHeroImage(hero)}
-                selectHero={this.selectHero.bind(this)}
-              />
-            )
-          })
+          this.props.show ?
+            <div className="hero-list">
+              {
+                Object.keys(heroes).map(hero => {
+                  return (
+                    <Hero key={`${hero}-list`}
+                      name={hero}
+                      selected={this.isHeroSelected(hero)}
+                      disabled={this.isHeroDisabled(hero)}
+                      image={this.getHeroImage(hero)}
+                      selectHero={this.selectHero.bind(this)}
+                    />
+                  )
+                })
+              }
+            </div>
+            : null
         }
-      </div>
+      </React.Fragment>
+
     );
   }
 };
@@ -59,7 +66,8 @@ const getData = (state, store) => state[store];
 
 const mapStateToProps = (state) => {
   return {
-    heroes: getData(state, 'heroes'),
+    heroes: getData(state, 'heroes').heroes,
+    show: getData(state, 'heroes').show,
     synergies: getData(state, 'synergies'),
     images: getData(state, 'images')
   };
