@@ -6,8 +6,8 @@ $theme-color-5: #C9B89C;
 $theme-green-dark: #565c32;
 $theme-green-light: #7a8545;
 $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
-
-header, footer {
+header,
+footer {
   display: flex;
   align-items: center;
   background: $theme-color-1;
@@ -17,11 +17,13 @@ header, footer {
     display: block;
   }
 }
+
 header {
   position: sticky;
   top: 0;
   z-index: 1;
 }
+
 .hero-list {
   background: $theme-color-1;
 }
@@ -29,46 +31,45 @@ header {
 main {
   background: $theme-color-2;
 }
+
 .chessboard {
   .square {
     display: flex;
   }
-  > * {
+  >* {
     background-color: $theme-green-light;
   }
-
-  > * {
+  >* {
     @each $offset in 2 4 6 8 9 11 13 15 {
       &:nth-child(16n + #{$offset}) {
         background-color: $theme-green-dark;
       }
     }
   }
-
 }
+
 .synergy-item {
   margin: 20px;
-  background-color: white;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.synergy-item-header {
-  .title {
-    text-transform: capitalize;
-    border-bottom: 2px solid $theme-color-1;
-    font-weight: bold;
-  }
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: capitalize;
   .synergy-item-count {
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     font-size: 2.5rem;
   }
 }
+
 .synergy-item-body {
   border-left: 2px solid $theme-color-1;
 }
+
 .active-synergy {
   padding: 5px;
   background: lightgreen;
 }
+
 .missing-synergy {
   padding: 5px;
   background: lightcoral;
