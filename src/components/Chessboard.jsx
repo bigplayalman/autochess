@@ -56,13 +56,13 @@ class Chessboard extends Component {
 
   render() {
     return (
-
-      <div className="chessboard">
-        {
-          this.generateSquares()
-        }
+      <div className="chessboard-container">
+        <div className="chessboard">
+          {
+            this.generateSquares()
+          }
+        </div>
       </div>
-
     )
   }
 };
