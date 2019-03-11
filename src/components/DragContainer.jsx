@@ -21,9 +21,6 @@ function Hero({ connectDragSource, isDragging, name, image }) {
         opacity: isDragging ? 0.5 : 1,
         backgroundImage: `url(${image})`
       }}>
-      <span>
-        {name}
-      </span>
     </div>
   );
 }

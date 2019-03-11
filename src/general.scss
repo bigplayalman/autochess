@@ -6,6 +6,10 @@ $theme-color-5: #C9B89C;
 $theme-green-dark: #565c32;
 $theme-green-light: #7a8545;
 $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+html {
+  font-family: 'Open Sans', sans-serif;
+}
 header,
 footer {
   display: flex;
@@ -55,9 +59,16 @@ main {
   text-transform: capitalize;
   .synergy-item-count {
     border-radius: 50%;
-    background-color: white;
+    font-weight: 600;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     font-size: 2.5rem;
+    > div {
+      text-shadow: 1px 3px #000;
+    }
   }
 }
 

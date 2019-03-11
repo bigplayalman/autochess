@@ -33,7 +33,7 @@ class SynergyList extends Component {
       if (actives[active] && this.props.synergies.synergies[active].active) {
         activeSynergies.push(
           <div className="synergy-item" key={`${active}-perks`}>
-            <div className="synergy-item-count">
+            <div className="synergy-item-count" style={{backgroundImage: `url(${this.props.images[active + '.png']})`}}>
               <div>
                 {actives[active]}
               </div>
@@ -62,7 +62,8 @@ const getData = (state, store) => state[store];
 const mapStateToProps = (state) => {
   return {
     heroes: getData(state, 'heroes').heroes,
-    synergies: getData(state, 'synergies')
+    synergies: getData(state, 'synergies'),
+    images: getData(state, 'images')
   };
 };
 

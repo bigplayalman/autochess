@@ -1,8 +1,8 @@
 @import "./heroes.scss";
 @import "./general.scss";
 @import "./menu.scss";
-$chess-square-size: 12.5vw;
-$hero-square-width: 12.5vw;
+$chess-square-size: 100px;
+$hero-square-width: 80px;
 html,
 body,
 .container {
@@ -23,23 +23,27 @@ body,
 main {
   position: relative;
   display: grid;
-  grid-auto-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(160px, 1fr));
   overflow: scroll;
 }
 
-.chessboard {
+.chessboard-container {
   position: sticky;
-  top:0;
+  top: 0;
+}
+
+.chessboard {
   display: grid;
-  grid-template-columns: repeat(8, $chess-square-size);
-  grid-template-rows: repeat(4, $chess-square-size);
+  grid-template-columns: repeat(8, minmax(40px, 1fr));
+  grid-template-rows: repeat(4, minmax(40px, 1fr));
 }
 
 .hero-list {
   position: absolute;
   right: 0;
   display: grid;
-  grid-template-columns: repeat(4, $hero-square-width);
+  grid-template-columns: repeat(3, minmax(auto, 120px));
   grid-auto-rows: $hero-square-width;
 }
 
@@ -65,5 +69,31 @@ main {
   flex-flow: column wrap;
   >* {
     flex: 1 1;
+  }
+}
+
+@media (min-width: 640px) {
+  $square: 80px;
+  .chessboard-container {
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    .chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, minmax($square, 1fr));
+      grid-template-rows: repeat(4, minmax($square, 1fr));
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  $square: 100px;
+  .chessboard-container {
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    .chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, minmax($square, 1fr));
+      grid-template-rows: repeat(4, minmax($square, 1fr));
+    }
   }
 }
