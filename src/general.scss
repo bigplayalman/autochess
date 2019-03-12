@@ -6,18 +6,21 @@ $theme-color-5: #C9B89C;
 $theme-green-dark: #565c32;
 $theme-green-light: #7a8545;
 $theme-inset-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.9) inset;
+$theme-card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+0 3px 6px rgba(0, 0, 0, 0.23);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 html {
   font-family: 'Open Sans', sans-serif;
 }
+
 header,
 footer {
   display: flex;
   align-items: center;
   background: $theme-color-1;
   color: white;
+  padding-left: 10px;
   strong {
-    padding-left: 10px;
     display: block;
   }
 }
@@ -30,10 +33,14 @@ header {
 
 .hero-list {
   background: $theme-color-1;
+  .hero {
+    background: $theme-color-3;
+    box-shadow: $theme-card-shadow;
+  }
 }
 
 main {
-  background: $theme-color-2;
+  background: white;
 }
 
 .chessboard {
@@ -45,7 +52,7 @@ main {
   }
   >* {
     @each $offset in 2 4 6 8 9 11 13 15 {
-      &:nth-child(16n + #{$offset}) {
+      &:nth-child(16n+#{$offset}) {
         background-color: $theme-green-dark;
       }
     }
@@ -53,7 +60,7 @@ main {
 }
 
 .synergy-item {
-  margin: 20px;
+  margin: 1.5vw;
   text-align: center;
   font-size: 1.5rem;
   text-transform: capitalize;
@@ -66,7 +73,7 @@ main {
     background-position: center center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     font-size: 2.5rem;
-    > div {
+    >div {
       text-shadow: 1px 3px #000;
     }
   }
@@ -84,4 +91,16 @@ main {
 .missing-synergy {
   padding: 5px;
   background: lightcoral;
+}
+
+.focus-container {
+  background: $theme-color-1;
+  color: white;
+  >div>span {
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+  }
 }

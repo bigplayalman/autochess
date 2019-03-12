@@ -2,294 +2,352 @@ export const heroes = {
   "Abaddon": {
     "position": null,
     "undead": true,
-    "knight": true
+    "knight": true,
+    "cost": 3
   },
   "Alchemist": {
     "position": null,
     "goblin": true,
-    "warlock": true
+    "warlock": true,
+    "cost": 4
   },
   "Anti Mage": {
     "position": null,
     "elf": true,
-    "demonhunter": true
+    "demonhunter": true,
+    "cost": 1
   },
   "Axe": {
     "position": null,
     "orc": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 1
   },
   "Bat Rider": {
     "position": null,
     "troll": true,
-    "knight": true
+    "knight": true,
+    "cost": 1
   },
   "Beast Master": {
     "position": null,
     "orc": true,
-    "hunter": true
+    "hunter": true,
+    "cost": 2
   },
   "Bounty Hunter": {
     "position": null,
     "goblin": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 1
   },
   "Chaos Knight": {
     "position": null,
     "demon": true,
-    "knight": true
+    "knight": true,
+    "cost": 2
   },
   "Clockwerk": {
     "position": null,
     "goblin": true,
-    "mech": true
+    "mech": true,
+    "cost": 1
   },
   "Crystal Maiden": {
     "position": null,
     "human": true,
-    "mage": true
+    "mage": true,
+    "cost": 2
   },
   "Disruptor": {
     "position": null,
     "orc": true,
-    "shaman": true
+    "shaman": true,
+    "cost": 4
   },
   "Doom": {
     "position": null,
     "demon": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 4
   },
   "Dragon Knight": {
     "position": null,
     "human": true,
     "dragon": true,
-    "knight": true
+    "knight": true,
+    "cost": 4
   },
   "Drow Ranger": {
     "position": null,
     "undead": true,
-    "hunter": true
+    "hunter": true,
+    "cost": 1
   },
   "Enchantress": {
     "position": null,
     "beast": true,
-    "druid": true
+    "druid": true,
+    "cost": 1
   },
   "Enigma": {
     "position": null,
     "elemental": true,
-    "warlock": true
+    "warlock": true,
+    "cost": 5
   },
   "Furion": {
     "position": null,
     "elf": true,
-    "druid": true
+    "druid": true,
+    "cost": 2
   },
   "Gyrocopter": {
     "position": null,
     "dwarf": true,
-    "mech": true
+    "mech": true,
+    "cost": 5
   },
   "Juggernaut": {
     "position": null,
     "orc": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 2
   },
   "Keeper of the Light": {
     "position": null,
     "human": true,
-    "mage": true
+    "mage": true,
+    "cost": 4
   },
   "Kunkka": {
     "position": null,
     "human": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 4
   },
   "Lich": {
     "position": null,
     "undead": true,
-    "mage": true
+    "mage": true,
+    "cost": 5
   },
   "Lina": {
     "position": null,
     "human": true,
-    "mage": true
+    "mage": true,
+    "cost": 3
   },
   "Lone Druid": {
     "position": null,
     "beast": true,
-    "druid": true
+    "druid": true,
+    "cost": 4
   },
   "Luna": {
     "position": null,
     "elf": true,
-    "knight": true
+    "knight": true,
+    "cost": 2
   },
   "Lycan": {
     "position": null,
     "human": true,
     "beast": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 3
   },
   "Medusa": {
     "position": null,
     "naga": true,
-    "hunter": true
+    "hunter": true,
+    "cost": 4
   },
   "Morphling": {
     "position": null,
     "elemental": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 2
   },
   "Necrophos": {
     "position": null,
     "undead": true,
-    "warlock": true
+    "warlock": true,
+    "cost": 4
   },
   "Ogre Magi": {
     "position": null,
     "ogre": true,
-    "mage": true
+    "mage": true,
+    "cost": 1
   },
   "Omni Knight": {
     "position": null,
     "human": true,
-    "knight": true
+    "knight": true,
+    "cost": 3
   },
   "Phantom Assassin": {
     "position": null,
     "elf": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 3
   },
   "Puck": {
     "position": null,
     "elf": true,
     "dragon": true,
-    "mage": true
+    "mage": true,
+    "cost": 2
   },
   "Queen of Pain": {
     "position": null,
     "demon": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 2
   },
   "Razor": {
     "position": null,
     "elemental": true,
-    "mage": true
+    "mage": true,
+    "cost": 3
   },
   "Sand King": {
     "position": null,
     "beast": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 3
   },
   "Shadow Fiend": {
     "position": null,
     "demon": true,
-    "warlock": true
+    "warlock": true,
+    "cost": 3
   },
   "Shadow Shaman": {
     "position": null,
     "troll": true,
-    "shaman": true
+    "shaman": true,
+    "cost": 1
   },
   "Slardar": {
     "position": null,
     "naga": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 2
   },
   "Slark": {
     "position": null,
     "naga": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 2
   },
   "Sniper": {
     "position": null,
     "dwarf": true,
-    "hunter": true
+    "hunter": true,
+    "cost": 3
   },
   "Techies": {
     "position": null,
     "goblin": true,
-    "mech": true
+    "mech": true,
+    "cost": 5
   },
   "Templar Assassin": {
     "position": null,
     "elf": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 4
   },
   "Terrorblade": {
     "position": null,
     "demon": true,
-    "demonhunter": true
+    "demonhunter": true,
+    "cost": 3
   },
   "Tidehunter": {
     "position": null,
     "naga": true,
-    "hunter": true
+    "hunter": true,
+    "cost": 5
   },
   "Timbersaw": {
     "position": null,
     "goblin": true,
-    "mech": true
+    "mech": true,
+    "cost": 2
   },
   "Tinker": {
     "position": null,
     "goblin": true,
-    "mech": true
+    "mech": true,
+    "cost": 1
   },
   "Tiny": {
     "position": null,
     "elemental": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 1
   },
   "Treant Protector": {
     "position": null,
     "elf": true,
-    "druid": true
+    "druid": true,
+    "cost": 2
   },
   "Troll Warlord": {
     "position": null,
     "troll": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 4
   },
   "Tusk": {
     "position": null,
     "beast": true,
-    "warrior": true
+    "warrior": true,
+    "cost": 1
   },
   "Venomancer": {
     "position": null,
     "beast": true,
-    "warlock": true
+    "warlock": true,
+    "cost": 3
   },
   "Viper": {
     "position": null,
     "dragon": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 3
   },
   "Wind Ranger": {
     "position": null,
     "elf": true,
-    "hunter": true
+    "hunter": true,
+    "cost": 3
   },
   "Witch Doctor": {
     "position": null,
     "troll": true,
-    "warlock": true
+    "warlock": true,
+    "cost": 2
   },
   "Death Prophet": {
     "position": null,
     "undead": true,
-    "warlock": true
+    "warlock": true,
+    "cost": 5
   },
   "Mirana": {
     "position": null,
     "elf": true,
-    "hunter": true
+    "hunter": true,
+    "cost": 3
   },
   "Rikimaru": {
     "position": null,
     "satyr": true,
-    "assasin": true
+    "assasin": true,
+    "cost": 3
   }
 }
