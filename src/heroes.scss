@@ -6,22 +6,163 @@
   filter: grayscale(100%);
 }
 
-.hero {
-  display: flex;
-  align-items: flex-end;
+.drag-hero {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  > span {
-    display: block;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  column-gap: 10px;
+  .hero-icon {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .hero-body {
     color: white;
-    background: rgba(0,0,0,.5);
-    width: 100%;
     padding: 5px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 30px;
+    column-gap: 5px;
+    text-transform: capitalize;
+    >strong {
+      grid-column: auto / span 6;
+      display: flex;
+      justify-content: space-between;
+    }
+    .demonhunter {
+      grid-column: auto / span 3;
+    }
+    >span {
+      grid-column: auto / span 2;
+      border: 2px solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &:hover {
     opacity: .3;
   }
+}
+
+.cost-1 {
+  color: white;
+}
+
+.cost-2 {
+  color: white;
+}
+
+.cost-3 {
+  color: #41438a;
+}
+
+.cost-4 {
+  color: #eb0ceb;
+}
+
+.cost-5 {
+  color: #ff8708;
+}
+
+.assasin {
+  color: #bfc971;
+}
+
+.demonhunter {
+  color: #6c138f;
+}
+
+.druid {
+  color: #cc6606;
+}
+
+.hunter {
+  color: #99bf6b;
+}
+
+.knight {
+  color: #ed8ab8;
+}
+
+.mage {
+  color: #79c3db;
+}
+
+.mech {
+  color: #c27706;
+}
+
+.shaman {
+  color: #2b43a1;
+}
+
+.warlock {
+  color: #574a8a;
+}
+
+.warrior {
+  color: #b89065;
+}
+
+.beast {
+  color: #2b8016;
+}
+
+.demon {
+  color: #771cbd;
+}
+
+.dwarf {
+  color: #a37056;
+}
+
+.dragon {
+  color: #cc040b;
+}
+
+.elemental {
+  color: #fcf80a;
+}
+
+.elf {
+  color: #0d578c;
+}
+
+.goblin {
+  color: #a82814;
+}
+
+.human {
+  color: #ffffff;
+}
+
+.naga {
+  color: #4d46d4;
+}
+
+.ogre {
+  color: #00455c;
+}
+
+.orc {
+  color: #8c1527;
+}
+
+.troll {
+  color: #757861;
+}
+
+.undead {
+  color: #575757;
+}
+
+.satyr {
+  color: navy;
 }

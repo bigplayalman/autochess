@@ -16,7 +16,7 @@ function collect(connect, monitor) {
 
 function Hero({ connectDragSource, isDragging, name, image }) {
   return connectDragSource(
-    <div className="hero"
+    <div className="drag-hero"
       style={{
         opacity: isDragging ? 0.5 : 1,
         backgroundImage: `url(${image})`

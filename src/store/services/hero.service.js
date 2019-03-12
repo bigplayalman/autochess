@@ -12,6 +12,7 @@ const TOGGLE_HEROES = 'hero/TOGGLE';
 // region initialState
 const initialState = {
   show: false,
+  focused: null,
   heroes: {...heroes}
 };
 // endregion
@@ -32,7 +33,8 @@ const reducer = (state = initialState, action = {}) => {
         heroes: {
           ...state.heroes,
           ...action.res
-        }
+        },
+        focused: {...action.res}
       }
     default:
       return state;
