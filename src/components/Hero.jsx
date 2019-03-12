@@ -6,24 +6,40 @@ export const Hero = (props) => {
     name,
     image,
     selected,
-    disabled,
+    hero,
     selectHero } = props;
 
   const styles = classnames({
     'hero': true,
-    selected,
-    disabled
+    selected
   })
+
+  const getHeroProps = () => {
+    const props = [];
+    Object.keys(hero).map(prop => {
+      if (hero[prop] === true) {
+        props.push(<span key={`${name}-${prop}`} className={prop}>{prop}</span>);
+      }
+      return prop;
+    });
+    return props;
+  }
 
   return (
     <div
       className={styles}
-      style={{ 'backgroundImage': `url(${image})` }}
       onClick={(e) => selectHero(name)}
     >
-      <span>
-        {name}
-      </span>
+      <div className="hero-icon" style={{ 'backgroundImage': `url(${image})` }}/>
+      <div className="hero-body">
+        <strong className={`cost-${hero.cost}`}>
+          {name}
+          <span>
+            ${hero.cost}
+          </span>
+        </strong>
+        {getHeroProps()}
+      </div>
     </div>
   )
 }

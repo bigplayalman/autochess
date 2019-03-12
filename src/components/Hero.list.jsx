@@ -39,20 +39,22 @@ export class HeroList extends Component {
       <React.Fragment>
         {
           this.props.show ?
-            <div className="hero-list">
-              {
-                Object.keys(heroes).map(hero => {
-                  return (
-                    <Hero key={`${hero}-list`}
-                      name={hero}
-                      selected={this.isHeroSelected(hero)}
-                      disabled={this.isHeroDisabled(hero)}
-                      image={this.getHeroImage(hero)}
-                      selectHero={this.selectHero.bind(this)}
-                    />
-                  )
-                })
-              }
+            <div className="hero-list-container">
+              <div className="hero-list">
+                {
+                  Object.keys(heroes).map(hero => {
+                    return (
+                      <Hero key={`${hero}-list`}
+                        name={hero}
+                        hero={heroes[hero]}
+                        selected={this.isHeroSelected(hero)}
+                        image={this.getHeroImage(hero)}
+                        selectHero={this.selectHero.bind(this)}
+                      />
+                    )
+                  })
+                }
+              </div>
             </div>
             : null
         }
