@@ -40,7 +40,7 @@ header {
 }
 
 main {
-  background: white;
+  background: lighten($theme-color-1, 4);
 }
 
 .chessboard {
@@ -94,7 +94,7 @@ main {
 }
 
 .focus-container {
-  background: $theme-color-1;
+  background: lighten($theme-color-1, 5);
   color: white;
   >div>span {
     border: 2px solid;
@@ -103,4 +103,12 @@ main {
     align-items: center;
     text-transform: capitalize;
   }
+}
+
+.synergy-active {
+  margin: 20px;
+  width: 320px;
+  box-shadow: $theme-card-shadow;
+  display: grid;
+  grid-template-columns: 1fr;
 }
