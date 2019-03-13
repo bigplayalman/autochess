@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "c56ceee8bdebc0ad74e0586494665db2",
-    "url": "/static/media/mirana_full.c56ceee8.png"
+    "revision": "40a4a8867735e811fd516d58322fb479",
+    "url": "/static/media/mech.40a4a886.png"
   },
   {
-    "revision": "0f72bbecd135ccfd4220",
-    "url": "/static/css/main.3561ca25.chunk.css"
+    "revision": "e31d4e5a72d5e2621d10",
+    "url": "/static/css/main.a537fbe5.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "c57e830311789eb54690",
-    "url": "/static/js/2.c57e8303.chunk.js"
+    "revision": "234b6862329bd8812183",
+    "url": "/static/js/2.234b6862.chunk.js"
   },
   {
     "revision": "50062f25b4d79a54a118abfa55fd9a25",
@@ -36,6 +36,10 @@ self.__precacheManifest = [
     "url": "/static/media/arc_warden_full.293748f3.png"
   },
   {
+    "revision": "28ec51c5c179611541ad2d696760c16c",
+    "url": "/static/media/assasin.28ec51c5.png"
+  },
+  {
     "revision": "23bac74adee98535ad7d7afb8c5d14a6",
     "url": "/static/media/axe_full.23bac74a.png"
   },
@@ -46,6 +50,10 @@ self.__precacheManifest = [
   {
     "revision": "020c8548dff4f81f2335b3f1cb9d8f28",
     "url": "/static/media/bat_rider_full.020c8548.png"
+  },
+  {
+    "revision": "5767de22ee12700469ebce204476ef10",
+    "url": "/static/media/beast.5767de22.png"
   },
   {
     "revision": "0f9d68e7312256da0b328a1aeb0cafdd",
@@ -108,6 +116,14 @@ self.__precacheManifest = [
     "url": "/static/media/death_prophet_full.c5ee30bf.png"
   },
   {
+    "revision": "6209288704bd215b6793543fb5618b13",
+    "url": "/static/media/demon.62092887.png"
+  },
+  {
+    "revision": "6fe35a2b2e0f0d1c0dda26a109c607b4",
+    "url": "/static/media/demonhunter.6fe35a2b.png"
+  },
+  {
     "revision": "2bef81f7766ae565daa585203b41a093",
     "url": "/static/media/disruptor_full.2bef81f7.png"
   },
@@ -116,12 +132,24 @@ self.__precacheManifest = [
     "url": "/static/media/doom_full.cba4ab4e.png"
   },
   {
+    "revision": "b6d20ffc6ab5418ed7559d26b1fdab84",
+    "url": "/static/media/dragon.b6d20ffc.png"
+  },
+  {
     "revision": "0bbde1a9e52af8476f48d346567c70e7",
     "url": "/static/media/dragon_knight_full.0bbde1a9.png"
   },
   {
     "revision": "3d11f94d0cf4c6ab6757a22f669ab4e4",
     "url": "/static/media/drow_ranger_full.3d11f94d.png"
+  },
+  {
+    "revision": "6ea32f5b3220d54fa35e14dd606876d2",
+    "url": "/static/media/druid.6ea32f5b.png"
+  },
+  {
+    "revision": "980c333fc65525c7625ec0faaac1063b",
+    "url": "/static/media/dwarf.980c333f.png"
   },
   {
     "revision": "fc536f415f9fde252988653de5be6713",
@@ -134,6 +162,14 @@ self.__precacheManifest = [
   {
     "revision": "3b15563d40a63983a0047fcc195243c6",
     "url": "/static/media/elder_titan_full.3b15563d.png"
+  },
+  {
+    "revision": "42086a39a155f797ffc3555677e90f96",
+    "url": "/static/media/elemental.42086a39.png"
+  },
+  {
+    "revision": "07d167c73d7f5bd256f49ba12a63628d",
+    "url": "/static/media/elf.07d167c7.png"
   },
   {
     "revision": "16f16ebea575cc510ea150bb0efb8202",
@@ -156,8 +192,20 @@ self.__precacheManifest = [
     "url": "/static/media/furion_full.bcc217cf.png"
   },
   {
+    "revision": "d14cbcedb5f1b084d309ca1d1b42d8b3",
+    "url": "/static/media/goblin.d14cbced.png"
+  },
+  {
     "revision": "afa3e877b5366e76e2882d6d3b047dfe",
     "url": "/static/media/gyrocopter_full.afa3e877.png"
+  },
+  {
+    "revision": "5b853cda6cfe684ec571e4704d75aa58",
+    "url": "/static/media/human.5b853cda.png"
+  },
+  {
+    "revision": "8eb436e7d4468106debce2235c6f9187",
+    "url": "/static/media/hunter.8eb436e7.png"
   },
   {
     "revision": "244b7189f232f7c2b95571e89e2ed8ea",
@@ -178,6 +226,10 @@ self.__precacheManifest = [
   {
     "revision": "8fcc3f87e61cc513e3decdd685e28141",
     "url": "/static/media/keeper_of_the_light_full.8fcc3f87.png"
+  },
+  {
+    "revision": "d50787448b7f20916a65f71ad0fc1734",
+    "url": "/static/media/knight.d5078744.png"
   },
   {
     "revision": "184de4b3eed078fb901419b2a93151f7",
@@ -220,8 +272,16 @@ self.__precacheManifest = [
     "url": "/static/media/lycan_full.9fd2f8c2.png"
   },
   {
+    "revision": "a2220f63c534563fabcf3603aa191711",
+    "url": "/static/media/mage.a2220f63.png"
+  },
+  {
     "revision": "b11a1c4dfc55312bf0784e2916a83e79",
     "url": "/static/media/magnataur_full.b11a1c4d.png"
+  },
+  {
+    "revision": "e31d4e5a72d5e2621d10",
+    "url": "/static/js/main.e31d4e5a.chunk.js"
   },
   {
     "revision": "74ffaaf977846fee67e954683f46cb88",
@@ -232,12 +292,16 @@ self.__precacheManifest = [
     "url": "/static/media/meepo_full.ae16eab5.png"
   },
   {
-    "revision": "0f72bbecd135ccfd4220",
-    "url": "/static/js/main.0f72bbec.chunk.js"
+    "revision": "c56ceee8bdebc0ad74e0586494665db2",
+    "url": "/static/media/mirana_full.c56ceee8.png"
   },
   {
     "revision": "fae37a912af223cc7593af04d09e7001",
     "url": "/static/media/morphling_full.fae37a91.png"
+  },
+  {
+    "revision": "c9c35ba58a4aa8c47be62ac20a083be0",
+    "url": "/static/media/naga.c9c35ba5.png"
   },
   {
     "revision": "55d66f587ad5a51cd8101c7f93192086",
@@ -260,6 +324,10 @@ self.__precacheManifest = [
     "url": "/static/media/obsidian_destroyer_full.fac7ca80.png"
   },
   {
+    "revision": "ebb63a48fc83d321961146f29915e350",
+    "url": "/static/media/ogre.ebb63a48.png"
+  },
+  {
     "revision": "c066d96564f2f39aa4a4342f518b34e6",
     "url": "/static/media/ogre_magi_full.c066d965.png"
   },
@@ -270,6 +338,10 @@ self.__precacheManifest = [
   {
     "revision": "726bca4beb8b8f5d9de435df2ea55516",
     "url": "/static/media/oracle_full.726bca4b.png"
+  },
+  {
+    "revision": "bd406a96e1bfd7c9f758fcdf6c0069b9",
+    "url": "/static/media/orc.bd406a96.png"
   },
   {
     "revision": "16d72e384620ed074ee31563e2f025b9",
@@ -316,6 +388,10 @@ self.__precacheManifest = [
     "url": "/static/media/sand_king_full.d0eb61fd.png"
   },
   {
+    "revision": "48b9b582beb49a464d2801b00ed4519e",
+    "url": "/static/media/satyr.48b9b582.png"
+  },
+  {
     "revision": "cb164086ba5a58584212ca5745237670",
     "url": "/static/media/shadow_demon_full.cb164086.png"
   },
@@ -326,6 +402,10 @@ self.__precacheManifest = [
   {
     "revision": "45ed7b5d901ed40ce6059a74fe31a844",
     "url": "/static/media/shadow_shaman_full.45ed7b5d.png"
+  },
+  {
+    "revision": "98fa1e2bae754e79454bdc86986944eb",
+    "url": "/static/media/shaman.98fa1e2b.png"
   },
   {
     "revision": "d977bf766c1c50594b8aff8be9176c28",
@@ -400,12 +480,20 @@ self.__precacheManifest = [
     "url": "/static/media/treant_protector_full.313a8fbb.png"
   },
   {
+    "revision": "4237a70ec779041a924db0ea2a4a06a8",
+    "url": "/static/media/troll.4237a70e.png"
+  },
+  {
     "revision": "898d6afa1761e07f3b81f2dcadcadbac",
     "url": "/static/media/troll_warlord_full.898d6afa.png"
   },
   {
     "revision": "3ad84f4648c15cf06fbb8d1a91b8e737",
     "url": "/static/media/tusk_full.3ad84f46.png"
+  },
+  {
+    "revision": "6b18f3568533dec9dc07bf1c21759dba",
+    "url": "/static/media/undead.6b18f356.png"
   },
   {
     "revision": "b5ea49b0c8683098fde91b4a96076113",
@@ -432,8 +520,16 @@ self.__precacheManifest = [
     "url": "/static/media/visage_full.a6a1047c.png"
   },
   {
+    "revision": "016113cadb2ccf0c50ea530c4fdd2c42",
+    "url": "/static/media/warlock.016113ca.png"
+  },
+  {
     "revision": "45815ead455060c0ecc346f6a897191e",
     "url": "/static/media/warlock_full.45815ead.png"
+  },
+  {
+    "revision": "157ead903d67ec3bc2324968573ae6ea",
+    "url": "/static/media/warrior.157ead90.png"
   },
   {
     "revision": "3c452d9944d8b6130dad514079705496",
@@ -460,7 +556,7 @@ self.__precacheManifest = [
     "url": "/static/media/zuus_full.9c9d00d8.png"
   },
   {
-    "revision": "4b065c1ae3256623724cdfd3c72b3ece",
+    "revision": "192ed64d118521d0bf4a01852f4e9e02",
     "url": "/index.html"
   }
 ];
