@@ -2,13 +2,16 @@ import {
   synergies
 } from '../data/synergies';
 // region Action Types
-const SET_SYNERGY = 'synergy/SET'
+const SET_SYNERGY = 'synergy/SET';
+const SET_ACTIVE = 'synergy/active';
 // endregion
 
 // region initialState
 const initialState = {
   actives: {},
-  synergies
+  synergies,
+  active: null,
+  count: 0
 };
 // endregion
 
@@ -19,8 +22,17 @@ const reducer = (state = initialState, action = {}) => {
     case SET_SYNERGY:
       return {
         ...state,
-        ...action.res
+        ...action.res,
+        active: null,
+        count: 0
       }
+    case SET_ACTIVE: {
+      return {
+        ...state,
+        active: action.res.active,
+        count: action.res.count
+      }
+    }
     default:
       return state;
   }
@@ -29,7 +41,11 @@ const reducer = (state = initialState, action = {}) => {
 
 // region Actions
 const setSynergy = (prop) => {
-  return {type:SET_SYNERGY, res:prop}
+  return { type: SET_SYNERGY, res: prop }
+}
+
+const setActive = (prop) => {
+  return { type: SET_ACTIVE, res: prop }
 }
 // endregion
 
@@ -52,9 +68,9 @@ const activateSynergies = (synergies, actives) => {
 
 const addSynergies = (actives) => {
   return (dispatch, getState) => {
-    const state = {...getState().synergies};
+    const state = { ...getState().synergies };
     actives.map(active => {
-      if(state.actives[active]) {
+      if (state.actives[active]) {
         state.actives[active]++;
       } else {
         state.actives[active] = 1;
@@ -68,7 +84,7 @@ const addSynergies = (actives) => {
 
 const removeSynergies = (actives) => {
   return (dispatch, getState) => {
-    const state = {...getState().synergies};
+    const state = { ...getState().synergies };
     actives.map(active => {
       state.actives[active]--;
       return active;
@@ -78,13 +94,24 @@ const removeSynergies = (actives) => {
   }
 }
 
+const setActiveSynergy = (active, count) => {
+  return (dispatch) => {
+    const state = {
+      count,
+      active
+    }
+    dispatch(setActive(state));
+  }
+}
+
 // region Exports
 const actionTypes = {
 };
 
 const actionCreators = {
   addSynergies,
-  removeSynergies
+  removeSynergies,
+  setActiveSynergy
 };
 
 export {

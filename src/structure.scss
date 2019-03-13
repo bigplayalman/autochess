@@ -22,42 +22,43 @@ body,
 
 main {
   position: relative;
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
-  overflow: scroll;
+  display: block;
+  width: 100vw;
 }
 
 .chessboard-container {
-  position: sticky;
-  top: 0;
-  display: grid;
-  grid-auto-rows: 12.5vw;
+  display: flex;
+  flex: 0;
+  flex-flow: row wrap;
 }
 .hero-list-container {
   position: absolute;
   right: 0;
-  grid-column: auto / span 2;
+  top: 0;
+  height: calc(100vh - 120px);
+  overflow: scroll;
 }
 
 .chessboard {
+  flex: 0 1 100%;
   display: grid;
-  grid-template-columns: repeat(8, 12.5vw);
-  grid-template-rows: repeat(4, 12.5vw);
-  grid-row: auto / span 4;
+  grid-template-columns: repeat(8, calc(100vw/8));
+  grid-template-rows: repeat(4, calc(100vw/8));
 }
 .focus-container {
-  display: grid;
-  grid-template-columns: repeat(8, 12.5vw);
+  flex: 0 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
   > * {
+    flex: 1;
     padding: 10px;
-  }
-  > strong {
-    grid-column: auto / span 2;
     text-align: center;
+    align-self: center;
   }
-  > div {
-    grid-column: auto / span 2;
+  > div > span {
+    padding: 10px;
   }
 }
 
@@ -70,8 +71,8 @@ main {
 
 .synergy-list {
   display: grid;
-  grid-template-columns: repeat(8, 12.5vw);
-  grid-auto-rows: 12.5vw;
+  grid-template-columns: repeat(6, calc(100vw/6));
+  grid-auto-rows: calc(100vw/6);
 }
 
 .synergy-item {
@@ -93,13 +94,12 @@ main {
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 999px) {
   .chessboard-container {
-    justify-content: center;
     .chessboard {
       display: grid;
-      grid-template-columns: repeat(8, 12.5vw);
-      grid-template-rows: repeat(4, 12.5vw);
+      grid-template-columns: repeat(8, calc(100vw/8));
+      grid-template-rows: repeat(4, calc(100vw/8));
     }
   }
   .hero-list-container {
@@ -109,17 +109,71 @@ main {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1000px) and (max-width: 1650px) {
+  $square: calc(75vw/8);
   .chessboard-container {
-    grid-template-columns: 800px 1fr;
     .chessboard {
+      flex: 0 1 75vw;
       display: grid;
-      grid-template-columns: repeat(8, 100px);
-      grid-template-rows: repeat(4, 100px);
+      grid-template-columns: repeat(8, $square);
+      grid-template-rows: repeat(4, $square);
     }
-    .synergy-list {
-      grid-template-columns: repeat(8, 100px);
-      grid-auto-rows: 100px;
+    .focus-container {
+      align-content: flex-start;
+      flex: 0 1 75vw;
+      display: grid;
+      padding-top: 10px;
+      grid-template-columns: 1fr 1fr;
+      > * {
+        grid-column: auto / span 2;
+      }
+      > div {
+        display: grid;
+        grid-column: auto / span 1;
+      }
+    }
+  }
+  .synergy-list {
+    grid-template-columns: repeat(8, $square);
+    grid-auto-rows: $square;
+  }
+  .hero-list-container {
+    .hero-list {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+@media (min-width: 1651px) {
+  $square: calc(50vw/8);
+  .chessboard-container {
+    .chessboard {
+      flex: 0 1 50vw;
+      display: grid;
+      grid-template-columns: repeat(8, $square);
+      grid-template-rows: repeat(4, $square);
+    }
+    .focus-container {
+      align-content: flex-start;
+      flex: 0 1 50vw;
+      display: grid;
+      padding-top: 10px;
+      grid-template-columns: 1fr 1fr;
+      > * {
+        grid-column: auto / span 2;
+      }
+      > div {
+        display: grid;
+        grid-column: auto / span 1;
+      }
+    }
+  }
+  .synergy-list {
+    grid-template-columns: repeat(8, $square);
+    grid-auto-rows: $square;
+  }
+  .hero-list-container {
+    .hero-list {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
   }
 }
