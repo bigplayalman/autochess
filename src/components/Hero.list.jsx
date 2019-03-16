@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Hero } from "./Hero";
 import { actionCreators as heroStore } from "../store/services/hero.service";
+import classnames from "classnames";
 
 export class HeroList extends Component {
   getHeroImage(hero) {
@@ -35,31 +36,28 @@ export class HeroList extends Component {
   }
   render() {
     const { heroes } = this.props;
+    const containerClasses = classnames({
+      'hero-list-container': true,
+      'hidden': !this.props.show
+    });
     return (
-      <React.Fragment>
-        {
-          this.props.show ?
-            <div className="hero-list-container">
-              <div className="hero-list">
-                {
-                  Object.keys(heroes).map(hero => {
-                    return (
-                      <Hero key={`${hero}-list`}
-                        name={hero}
-                        hero={heroes[hero]}
-                        selected={this.isHeroSelected(hero)}
-                        image={this.getHeroImage(hero)}
-                        selectHero={this.selectHero.bind(this)}
-                      />
-                    )
-                  })
-                }
-              </div>
-            </div>
-            : null
-        }
-      </React.Fragment>
-
+      <div className={containerClasses}>
+        <div className="hero-list">
+          {
+            Object.keys(heroes).map(hero => {
+              return (
+                <Hero key={`${hero}-list`}
+                  name={hero}
+                  hero={heroes[hero]}
+                  selected={this.isHeroSelected(hero)}
+                  image={this.getHeroImage(hero)}
+                  selectHero={this.selectHero.bind(this)}
+                />
+              )
+            })
+          }
+        </div>
+      </div>
     );
   }
 };

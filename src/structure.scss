@@ -1,8 +1,10 @@
 @import "./heroes.scss";
 @import "./general.scss";
 @import "./menu.scss";
-$chess-square-size: 100px;
-$hero-square-width: 80px;
+
+$square-mobile: calc(100vw/8);
+$square-synergy: calc(100vw/4);
+
 html,
 body,
 .container {
@@ -17,20 +19,19 @@ body,
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 1fr 60px;
+  grid-template-rows: 60px 1fr 90px;
 }
 
 main {
   position: relative;
-  display: block;
-  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, $square-mobile)
+}
+.hidden {
+  display: none;
 }
 
-.chessboard-container {
-  display: flex;
-  flex: 0;
-  flex-flow: row wrap;
-}
 .hero-list-container {
   position: absolute;
   right: 0;
@@ -40,26 +41,31 @@ main {
 }
 
 .chessboard {
-  flex: 0 1 100%;
+  grid-row: auto / span 4;
   display: grid;
-  grid-template-columns: repeat(8, calc(100vw/8));
-  grid-template-rows: repeat(4, calc(100vw/8));
+  grid-template-columns: repeat(8, $square-mobile);
+  grid-template-rows: repeat(4, $square-mobile);
 }
 .focus-container {
-  flex: 0 1 100%;
+  grid-row: auto / span 2;
   display: flex;
   flex-flow: row wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  text-transform: capitalize;
   > * {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    align-self: center;
+    flex: 0 1 25%;
+    > div {
+      border: 2px solid;
+      padding: 5px;
+      display: inline-block;
+    }
   }
-  > div > span {
-    padding: 10px;
-  }
+}
+.synergy-container {
+  grid-row: auto / span 2;
 }
 
 .hero-list {
@@ -71,8 +77,8 @@ main {
 
 .synergy-list {
   display: grid;
-  grid-template-columns: repeat(6, calc(100vw/6));
-  grid-auto-rows: calc(100vw/6);
+  grid-template-columns: repeat(8, $square-mobile);
+  grid-auto-rows: $square-mobile;
 }
 
 .synergy-item {
@@ -95,13 +101,6 @@ main {
 }
 
 @media (min-width: 640px) and (max-width: 999px) {
-  .chessboard-container {
-    .chessboard {
-      display: grid;
-      grid-template-columns: repeat(8, calc(100vw/8));
-      grid-template-rows: repeat(4, calc(100vw/8));
-    }
-  }
   .hero-list-container {
     .hero-list {
       grid-template-columns: 1fr 1fr;
@@ -111,32 +110,23 @@ main {
 
 @media (min-width: 1000px) and (max-width: 1650px) {
   $square: calc(75vw/8);
-  .chessboard-container {
+  main {
+    grid-template-columns: 75vw 1fr;
+    grid-template-rows: repeat(6, $square);
     .chessboard {
-      flex: 0 1 75vw;
       display: grid;
       grid-template-columns: repeat(8, $square);
       grid-template-rows: repeat(4, $square);
     }
     .focus-container {
-      align-content: flex-start;
-      flex: 0 1 75vw;
-      display: grid;
-      padding-top: 10px;
-      grid-template-columns: 1fr 1fr;
-      > * {
-        grid-column: auto / span 2;
-      }
-      > div {
-        display: grid;
-        grid-column: auto / span 1;
-      }
+      grid-row: auto / span 4;
+    }
+    .synergy-list {
+      grid-template-columns: repeat(8, $square);
+      grid-auto-rows: $square;
     }
   }
-  .synergy-list {
-    grid-template-columns: repeat(8, $square);
-    grid-auto-rows: $square;
-  }
+
   .hero-list-container {
     .hero-list {
       grid-template-columns: 1fr 1fr 1fr;
@@ -154,7 +144,7 @@ main {
     }
     .focus-container {
       align-content: flex-start;
-      flex: 0 1 50vw;
+      flex: 0 1 25vw;
       display: grid;
       padding-top: 10px;
       grid-template-columns: 1fr 1fr;
@@ -172,8 +162,13 @@ main {
     grid-auto-rows: $square;
   }
   .hero-list-container {
+    &.hidden {
+      display: block;
+    }
+    position: relative;
+    flex: 1 0 25vw;
     .hero-list {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
 }

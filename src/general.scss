@@ -11,6 +11,7 @@ $theme-card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 html {
   font-family: 'Open Sans', sans-serif;
+  background: $theme-color-1;
 }
 
 header,
@@ -28,6 +29,7 @@ footer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  padding: 10px;
   a {
     color: white;
     font-weight: bold;
@@ -69,9 +71,8 @@ main {
 }
 
 .synergy-item {
-  margin: 1.5vw;
+  margin: 1vw;
   text-align: center;
-  font-size: 1.5rem;
   text-transform: capitalize;
   .synergy-item-count {
     border-radius: 50%;
@@ -81,7 +82,7 @@ main {
     background-size: cover;
     background-position: center center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     >div {
       text-shadow: 1px 3px #000;
     }
@@ -105,13 +106,6 @@ main {
 .focus-container {
   background: lighten($theme-color-1, 5);
   color: white;
-  >div>span {
-    border: 2px solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-  }
 }
 
 .synergy-active {
