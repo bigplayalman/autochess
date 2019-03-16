@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Chessboard from "./components/Chessboard";
 import HeroList from "./components/Hero.list";
 import SynergyList from "./components/Synergy.list";
+import FocusedHero from "./components/FocusedHero";
+import FocusedSynergy from "./components/FocusedSynergy";
 
 export const Layout = () => {
   return (
@@ -11,8 +13,10 @@ export const Layout = () => {
       <Header />
       <main>
         <Chessboard />
-        <SynergyList />
+        <FocusedHero />
         <HeroList />
+        <SynergyList />
+        <FocusedSynergy />
       </main>
       <footer>
         <div>

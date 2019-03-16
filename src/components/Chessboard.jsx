@@ -54,66 +54,11 @@ class Chessboard extends Component {
     return exists;
   }
 
-  getHeroProps(heroProps, name) {
-    const container = [];
-    const props = Object.keys(heroProps[name]);
-    props.map(prop => {
-      if (prop === 'position') {
-        return prop;
-      }
-      switch (heroProps[name][prop]) {
-        case true:
-          container.push(
-            <div key={`${name}-${prop}`}>
-              <span className={prop}>
-                {prop}
-              </span>
-            </div>
-          );
-          break;
-        default:
-          container.push(
-            <span key={`${name}-${prop}`}>
-              {prop}: {heroProps[name][prop]}
-            </span>
-          );
-          break;
-      }
-      return prop;
-    });
-    return container;
-  }
-
-  focusedHero(hero) {
-    const container = [];
-    const heroProps = Object.keys(hero);
-    heroProps.map(name => {
-      container.push(
-        <div key={`focused-hero-${name}`} className="focus-container">
-          <strong>
-            {name}
-          </strong>
-          {this.getHeroProps(hero, name)}
-        </div>
-      );
-
-      return name;
-    })
-    return container;
-  }
-
   render() {
     return (
-      <div className="chessboard-container">
-        <div className="chessboard">
-          {
-            this.generateSquares()
-          }
-        </div>
+      <div className="chessboard">
         {
-          this.props.focused ?
-            this.focusedHero(this.props.focused)
-            : null
+          this.generateSquares()
         }
       </div>
     )
@@ -125,7 +70,6 @@ const getData = (state, store) => state[store];
 const mapStateToProps = (state) => {
   return {
     heroes: getData(state, 'heroes').heroes,
-    focused: getData(state, 'heroes').focused,
     images: getData(state, 'images')
   };
 };
