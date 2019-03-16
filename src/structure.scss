@@ -1,10 +1,8 @@
 @import "./heroes.scss";
 @import "./general.scss";
 @import "./menu.scss";
-
 $square-mobile: calc(100vw/8);
 $square-synergy: calc(100vw/4);
-
 html,
 body,
 .container {
@@ -28,6 +26,7 @@ main {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(8, $square-mobile)
 }
+
 .hidden {
   display: none;
 }
@@ -46,6 +45,7 @@ main {
   grid-template-columns: repeat(8, $square-mobile);
   grid-template-rows: repeat(4, $square-mobile);
 }
+
 .focus-container {
   grid-row: auto / span 2;
   display: flex;
@@ -55,15 +55,16 @@ main {
   text-align: center;
   padding: 10px;
   text-transform: capitalize;
-  > * {
+  >* {
     flex: 0 1 25%;
-    > div {
+    >div {
       border: 2px solid;
       padding: 5px;
       display: inline-block;
     }
   }
 }
+
 .synergy-container {
   grid-row: auto / span 2;
 }
@@ -95,7 +96,7 @@ main {
 .synergy-item-body {
   display: flex;
   flex-flow: column wrap;
-  > * {
+  >* {
     flex: 1 1;
   }
 }
@@ -108,7 +109,7 @@ main {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1650px) {
+@media (min-width: 1000px) and (max-width: 1900px) {
   $square: calc(75vw/8);
   main {
     grid-template-columns: 75vw 1fr;
@@ -120,55 +121,120 @@ main {
     }
     .focus-container {
       grid-row: auto / span 4;
+      align-content: flex-start;
     }
     .synergy-list {
       grid-template-columns: repeat(8, $square);
       grid-auto-rows: $square;
     }
   }
-
   .hero-list-container {
     .hero-list {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
 }
-@media (min-width: 1651px) {
-  $square: calc(50vw/8);
-  .chessboard-container {
+
+@media (min-width: 1901px) and (max-width: 2200px) {
+  $square-desktop: 100px;
+  header {
+    label {
+      display: none;
+    }
+  }
+  main {
+    grid-template-columns: 800px 400px 1fr;
+    grid-template-rows: 400px 100px 1fr;
     .chessboard {
-      flex: 0 1 50vw;
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
       display: grid;
-      grid-template-columns: repeat(8, $square);
-      grid-template-rows: repeat(4, $square);
+      grid-template-columns: repeat(8, $square-desktop);
+      grid-template-rows: repeat(4, $square-desktop);
     }
     .focus-container {
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
       align-content: flex-start;
-      flex: 0 1 25vw;
-      display: grid;
-      padding-top: 10px;
-      grid-template-columns: 1fr 1fr;
-      > * {
-        grid-column: auto / span 2;
-      }
-      > div {
-        display: grid;
-        grid-column: auto / span 1;
-      }
+    }
+    .synergy-active {
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
+      align-content: flex-start;
+    }
+    .hero-list-container {
+      grid-column: auto /span 1;
+      grid-row: auto / span 3;
+      height: 1000px;
+    }
+    .synergy-container {
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
     }
   }
   .synergy-list {
-    grid-template-columns: repeat(8, $square);
-    grid-auto-rows: $square;
+    grid-template-columns: repeat(10, $square-desktop);
+    grid-auto-rows: $square-desktop;
   }
   .hero-list-container {
     &.hidden {
-      display: block;
+      display: grid;
     }
     position: relative;
-    flex: 1 0 25vw;
     .hero-list {
       grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (min-width: 2201px) {
+  $square-desktop: 100px;
+  header {
+    label {
+      display: none;
+    }
+  }
+  main {
+    grid-template-columns: 800px 400px 1fr;
+    grid-template-rows: 400px 100px 1fr;
+    .chessboard {
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
+      display: grid;
+      grid-template-columns: repeat(8, $square-desktop);
+      grid-template-rows: repeat(4, $square-desktop);
+    }
+    .focus-container {
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
+      align-content: flex-start;
+    }
+    .synergy-active {
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
+      align-content: flex-start;
+    }
+    .hero-list-container {
+      grid-column: auto /span 1;
+      grid-row: auto / span 3;
+      height: 1000px;
+    }
+    .synergy-container {
+      grid-column: auto /span 1;
+      grid-row: auto / span 1;
+    }
+  }
+  .synergy-list {
+    grid-template-columns: repeat(10, $square-desktop);
+    grid-auto-rows: $square-desktop;
+  }
+  .hero-list-container {
+    &.hidden {
+      display: grid;
+    }
+    position: relative;
+    .hero-list {
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 }
