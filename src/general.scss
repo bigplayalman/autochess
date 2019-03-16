@@ -109,9 +109,12 @@ main {
 }
 
 .synergy-active {
-  margin: 20px;
-  width: 320px;
   box-shadow: $theme-card-shadow;
   display: grid;
   grid-template-columns: 1fr;
+   > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
 }

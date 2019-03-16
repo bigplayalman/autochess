@@ -28,7 +28,7 @@ class FocusedSynergy extends Component {
   }
   render() {
     if (!this.props.active) {
-      return null;
+      return <div className="synergy-active" />
     }
     return (
       <div className="synergy-active">
