@@ -14,6 +14,7 @@ class SynergyList extends Component {
                 {actives[active]}
               </div>
             </div>
+            {active}
           </div>
         );
       }

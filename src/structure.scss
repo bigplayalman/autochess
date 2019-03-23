@@ -47,16 +47,25 @@ main {
 }
 
 .focus-container {
-  grid-row: auto / span 2;
-  display: flex;
-  flex-flow: row wrap;
-  align-content: center;
-  justify-content: space-between;
-  text-align: center;
+  grid-row: auto / span 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
   padding: 10px;
   text-transform: capitalize;
-  >* {
-    flex: 0 1 25%;
+  > strong {
+    grid-column: auto / span 3;
+  }
+  > .active-container {
+    grid-column: auto / span 2;
+  }
+  > .description-container {
+    grid-column: auto / span 3;
+  }
+  > .absorbed-container {
+    grid-column: auto / span 3;
+  }
+  > * {
     >div {
       border: 2px solid;
       padding: 5px;
@@ -84,9 +93,11 @@ main {
 
 .synergy-item {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
+  justify-content: center;
   .synergy-item-count {
-    flex: 1 1;
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
