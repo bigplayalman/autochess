@@ -17,14 +17,65 @@ body,
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 1fr 90px;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+}
+
+@media (min-width: 927px) {
+  main {
+    overflow: auto;
+  }
+  .container {
+    .hero-list-container {
+      width: 80%;
+    }
+    .hero-list {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr))
+    }
+  }
+
 }
 
 main {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, $square-mobile)
+  width: 98vw;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  .synergy-list-container {
+    min-width: 64%;
+  }
+  .chessboard-container {
+    min-width: 64%;
+  }
+  > * {
+    min-width: 33%;
+    padding: 1%;
+    /* value to use above 900px */
+    width: calc((900px - 99%) * 900);
+    /* 900px "breakpoint" */
+    max-width: 99%;
+    /* value to use below 900px */
+    &:last-child {
+      position: relative;
+    }
+    &:last-child::after {
+      /**
+       * This is the second part of the hack. It creates
+       * an invisible element on the last child that
+       * forces a space between the child and the right
+       * edge of the container.
+       */
+      display: block;
+      width: 11px;
+      height: 1px;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      visibility: hidden;
+      content: "";
+    }
+  }
 }
 
 .hidden {
@@ -34,48 +85,35 @@ main {
 .hero-list-container {
   position: absolute;
   right: 0;
-  top: 0;
-  height: calc(100vh - 120px);
+  top: 58px;
+  height: calc(100vh - 58px - 56px);
   overflow: scroll;
 }
 
 .chessboard {
-  grid-row: auto / span 4;
   display: grid;
-  grid-template-columns: repeat(8, $square-mobile);
-  grid-template-rows: repeat(4, $square-mobile);
+  grid-template-columns: repeat(8, 12.5%);
+  .square {
+    min-height: 40px;
+    height: 12.5vw;
+    max-height: 100px;
+  }
 }
 
 .focus-container {
-  grid-row: auto / span 4;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 10px;
   padding: 10px;
+  width: calc(100% - 20px);
   text-transform: capitalize;
-  > strong {
-    grid-column: auto / span 3;
-  }
-  > .active-container {
-    grid-column: auto / span 2;
-  }
-  > .description-container {
-    grid-column: auto / span 3;
-  }
-  > .absorbed-container {
-    grid-column: auto / span 3;
-  }
-  > * {
+  >* {
     >div {
       border: 2px solid;
       padding: 5px;
       display: inline-block;
     }
   }
-}
-
-.synergy-container {
-  grid-row: auto / span 2;
 }
 
 .hero-list {
@@ -86,14 +124,13 @@ main {
 }
 
 .synergy-list {
-  display: grid;
-  grid-template-columns: repeat(8, $square-mobile);
-  grid-auto-rows: $square-mobile;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .synergy-item {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
   .synergy-item-count {
     width: 80px;
@@ -109,143 +146,5 @@ main {
   flex-flow: column wrap;
   >* {
     flex: 1 1;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 999px) {
-  .hero-list-container {
-    .hero-list {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1900px) {
-  $square: calc(75vw/8);
-  main {
-    grid-template-columns: 75vw 1fr;
-    grid-template-rows: repeat(6, $square);
-    .chessboard {
-      display: grid;
-      grid-template-columns: repeat(8, $square);
-      grid-template-rows: repeat(4, $square);
-    }
-    .focus-container {
-      grid-row: auto / span 4;
-      align-content: flex-start;
-    }
-    .synergy-list {
-      grid-template-columns: repeat(8, $square);
-      grid-auto-rows: $square;
-    }
-  }
-  .hero-list-container {
-    .hero-list {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-}
-
-@media (min-width: 1901px) and (max-width: 2200px) {
-  $square-desktop: 100px;
-  header {
-    label {
-      display: none;
-    }
-  }
-  main {
-    grid-template-columns: 800px 400px 1fr;
-    grid-template-rows: 400px 100px 1fr;
-    .chessboard {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-      display: grid;
-      grid-template-columns: repeat(8, $square-desktop);
-      grid-template-rows: repeat(4, $square-desktop);
-    }
-    .focus-container {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-      align-content: flex-start;
-    }
-    .synergy-active {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-      align-content: flex-start;
-    }
-    .hero-list-container {
-      grid-column: auto /span 1;
-      grid-row: auto / span 3;
-      height: 1000px;
-    }
-    .synergy-container {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-    }
-  }
-  .synergy-list {
-    grid-template-columns: repeat(10, $square-desktop);
-    grid-auto-rows: $square-desktop;
-  }
-  .hero-list-container {
-    &.hidden {
-      display: grid;
-    }
-    position: relative;
-    .hero-list {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}
-
-@media (min-width: 2201px) {
-  $square-desktop: 100px;
-  header {
-    label {
-      display: none;
-    }
-  }
-  main {
-    grid-template-columns: 800px 400px 1fr;
-    grid-template-rows: 400px 100px 1fr;
-    .chessboard {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-      display: grid;
-      grid-template-columns: repeat(8, $square-desktop);
-      grid-template-rows: repeat(4, $square-desktop);
-    }
-    .focus-container {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-      align-content: flex-start;
-    }
-    .synergy-active {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-      align-content: flex-start;
-    }
-    .hero-list-container {
-      grid-column: auto /span 1;
-      grid-row: auto / span 3;
-      height: 1000px;
-    }
-    .synergy-container {
-      grid-column: auto /span 1;
-      grid-row: auto / span 1;
-    }
-  }
-  .synergy-list {
-    grid-template-columns: repeat(10, $square-desktop);
-    grid-auto-rows: $square-desktop;
-  }
-  .hero-list-container {
-    &.hidden {
-      display: grid;
-    }
-    position: relative;
-    .hero-list {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
   }
 }

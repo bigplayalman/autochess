@@ -20,7 +20,7 @@ footer {
   align-items: center;
   background: $theme-color-1;
   color: white;
-  padding: 0 10px;
+  padding: 20px;
   strong {
     display: block;
   }
@@ -109,6 +109,7 @@ main {
   box-shadow: $theme-card-shadow;
   display: grid;
   grid-template-columns: 1fr;
+  padding: 10px;
   >* {
     display: flex;
     justify-content: center;
