@@ -43,18 +43,18 @@ main {
   flex-direction: column;
   flex-wrap: wrap;
   .synergy-list-container {
-    min-width: 64%;
+    min-width: 63%;
   }
   .chessboard-container {
-    min-width: 64%;
+    min-width: 63%;
   }
   > * {
-    min-width: 33%;
+    min-width: 32%;
     padding: 1%;
     /* value to use above 900px */
-    width: calc((900px - 99%) * 900);
+    width: calc((900px - 98%) * 900);
     /* 900px "breakpoint" */
-    max-width: 99%;
+    max-width: 98%;
     /* value to use below 900px */
     &:last-child {
       position: relative;
