@@ -12,12 +12,18 @@ export const Layout = () => {
     <div className="container">
       <Header />
       <main>
-        <Chessboard />
-        <FocusedHero />
-        <HeroList />
-        <SynergyList />
-        <FocusedSynergy />
+        <div className="chessboard-container">
+          <Chessboard />
+        </div>
+        <div className="synergy-list-container">
+          <SynergyList />
+          <FocusedSynergy />
+        </div>
+        <div>
+          <FocusedHero />
+        </div>
       </main>
+      <HeroList />
       <footer>
         <div>
           Dota 2 content and materials are trademarks and copyrights of Valve or its licensors.  This site is not affiliated with Valve.
