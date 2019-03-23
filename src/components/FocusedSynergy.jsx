@@ -28,7 +28,7 @@ class FocusedSynergy extends Component {
   }
   render() {
     if (!this.props.active) {
-      return <div className="synergy-active" />
+      return <div className="synergy-active" style={{color: 'white'}}>Select a Synergy</div>
     }
     return (
       <div className="synergy-active">

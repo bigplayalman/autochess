@@ -25,6 +25,7 @@ footer {
     display: block;
   }
 }
+
 footer {
   display: flex;
   flex-flow: row wrap;
@@ -71,13 +72,13 @@ main {
 }
 
 .synergy-item {
-  margin: 1vw;
+  margin: 5px;
   text-align: center;
   text-transform: capitalize;
+  font-weight: 600;
+  color: white;
   .synergy-item-count {
     border-radius: 50%;
-    font-weight: 600;
-    color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -87,10 +88,6 @@ main {
       text-shadow: 1px 3px #000;
     }
   }
-}
-
-.synergy-item-body {
-  border-left: 2px solid $theme-color-1;
 }
 
 .active-synergy {
@@ -112,9 +109,9 @@ main {
   box-shadow: $theme-card-shadow;
   display: grid;
   grid-template-columns: 1fr;
-   > * {
+  >* {
     display: flex;
     justify-content: center;
     align-items: center;
-   }
+  }
 }
