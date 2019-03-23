@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/magnataur_full.b11a1c4d.png"
   },
   {
-    "revision": "f9b42a452147ff13cf0f",
-    "url": "/static/css/main.fce0bddd.chunk.css"
+    "revision": "bc594781c6c29e7ea392",
+    "url": "/static/css/main.cf275216.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -280,8 +280,8 @@ self.__precacheManifest = [
     "url": "/static/media/mage.a2220f63.png"
   },
   {
-    "revision": "f9b42a452147ff13cf0f",
-    "url": "/static/js/main.f9b42a45.chunk.js"
+    "revision": "bc594781c6c29e7ea392",
+    "url": "/static/js/main.bc594781.chunk.js"
   },
   {
     "revision": "40a4a8867735e811fd516d58322fb479",
@@ -560,7 +560,7 @@ self.__precacheManifest = [
     "url": "/static/media/zuus_full.9c9d00d8.png"
   },
   {
-    "revision": "8c5eac988ce277627b4cae1a13975164",
+    "revision": "815c482228a3b38ca414d5b0e6e89f83",
     "url": "/index.html"
   }
 ];
