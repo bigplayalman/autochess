@@ -1,23 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "40a4a8867735e811fd516d58322fb479",
-    "url": "/static/media/mech.40a4a886.png"
+    "revision": "b11a1c4dfc55312bf0784e2916a83e79",
+    "url": "/static/media/magnataur_full.b11a1c4d.png"
   },
   {
-    "revision": "be2fb7c2d2604c5d9f7d",
-    "url": "/static/css/main.2f649f7e.chunk.css"
+    "revision": "d740ed6095de8c269849",
+    "url": "/static/css/main.766b79ca.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "e8eaca1201d1c4bb9cbd",
-    "url": "/static/js/2.e8eaca12.chunk.js"
+    "revision": "4d7c1fc75cc743bc8e59",
+    "url": "/static/js/2.4d7c1fc7.chunk.js"
   },
   {
     "revision": "50062f25b4d79a54a118abfa55fd9a25",
     "url": "/static/media/abaddon_full.50062f25.png"
+  },
+  {
+    "revision": "a8c3f6a8ce3baa4be48e4997074f1df1",
+    "url": "/static/media/abaddon_skill.a8c3f6a8.png"
   },
   {
     "revision": "449ab30519f13dedea7566cf218cf588",
@@ -276,12 +280,12 @@ self.__precacheManifest = [
     "url": "/static/media/mage.a2220f63.png"
   },
   {
-    "revision": "b11a1c4dfc55312bf0784e2916a83e79",
-    "url": "/static/media/magnataur_full.b11a1c4d.png"
+    "revision": "d740ed6095de8c269849",
+    "url": "/static/js/main.d740ed60.chunk.js"
   },
   {
-    "revision": "be2fb7c2d2604c5d9f7d",
-    "url": "/static/js/main.be2fb7c2.chunk.js"
+    "revision": "40a4a8867735e811fd516d58322fb479",
+    "url": "/static/media/mech.40a4a886.png"
   },
   {
     "revision": "74ffaaf977846fee67e954683f46cb88",
@@ -556,7 +560,7 @@ self.__precacheManifest = [
     "url": "/static/media/zuus_full.9c9d00d8.png"
   },
   {
-    "revision": "2c6847aadb0449ebfc518d1d2f0a478e",
+    "revision": "34185e8cbc927c6a934ec1d85247d5ae",
     "url": "/index.html"
   }
 ];
