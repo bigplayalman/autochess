@@ -26,8 +26,6 @@ function Square({ connectDropTarget, isOver, canDrop, children }) {
         position: 'absolute',
         top: 0,
         left: 0,
-        height: '100%',
-        width: '100%',
         zIndex: 1,
         opacity: 0.2,
         backgroundColor: color,
@@ -36,9 +34,7 @@ function Square({ connectDropTarget, isOver, canDrop, children }) {
   }
   return connectDropTarget(
     <div className="square" style={{
-      position: 'relative',
-      width: '100%',
-      height: '100%'
+      position: 'relative'
     }}>
       {children}
       {isOver && !canDrop && renderOverlay('red')}
