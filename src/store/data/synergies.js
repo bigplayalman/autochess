@@ -1,8 +1,8 @@
 export const synergies = {
   assasin: {
-    3: 'All friendly assassins have a 10% chance to deal 3.5x damage',
-    6: 'All friendly assassins have an additional 20% chance to deal 4.5x damage',
-    9: 'All friendly assassins have an additional 20% chance to deal 5x damage.',
+    3: 'All friendly assassins have a 15% chance to deal 3.5x damage',
+    6: 'All friendly assassins have an additional 15% chance to deal 4.5x damage',
+    9: 'All friendly assassins have an additional 15% chance to deal 5x damage.',
     active: false
   },
   demonhunter: {
