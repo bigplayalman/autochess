@@ -223,12 +223,12 @@ export const heroes = {
     "mage": true,
     "cost": 3
   },
-  "Sand King": {
-    "position": null,
-    "beast": true,
-    "assasin": true,
-    "cost": 3
-  },
+  // "Sand King": {
+  //   "position": null,
+  //   "beast": true,
+  //   "assasin": true,
+  //   "cost": 3
+  // },
   "Shadow Fiend": {
     "position": null,
     "demon": true,
@@ -247,12 +247,12 @@ export const heroes = {
     "warrior": true,
     "cost": 2
   },
-  "Slark": {
-    "position": null,
-    "naga": true,
-    "assasin": true,
-    "cost": 2
-  },
+  // "Slark": {
+  //   "position": null,
+  //   "naga": true,
+  //   "assasin": true,
+  //   "cost": 2
+  // },
   "Sniper": {
     "position": null,
     "dwarf": true,
@@ -305,7 +305,7 @@ export const heroes = {
     "position": null,
     "elf": true,
     "druid": true,
-    "cost": 2
+    "cost": 3
   },
   "Troll Warlord": {
     "position": null,
@@ -353,12 +353,24 @@ export const heroes = {
     "position": null,
     "elf": true,
     "hunter": true,
-    "cost": 3
+    "cost": 2
   },
-  "Rikimaru": {
+  // "Rikimaru": {
+  //   "position": null,
+  //   "satyr": true,
+  //   "assasin": true,
+  //   "cost": 3
+  // },
+  "Zues": {
     "position": null,
-    "satyr": true,
-    "assasin": true,
-    "cost": 3
+    "god": true,
+    "mage": true,
+    "cost": 5
+  },
+  "Mars": {
+    "position": null,
+    "god": true,
+    "warrior": true,
+    "cost": 1
   }
 }

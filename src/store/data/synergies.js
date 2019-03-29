@@ -1,8 +1,8 @@
 export const synergies = {
   assasin: {
-    3: 'All friendly assassins have a 15% chance to deal 3.5x damage',
-    6: 'All friendly assassins have an additional 15% chance to deal 4.5x damage',
-    9: 'All friendly assassins have an additional 15% chance to deal 5x damage.',
+    3: 'All friendly assassins have a 15% chance to deal 350%',
+    6: 'All friendly assassins have an additional 20% chance to deal 450% damage',
+    // 9: 'All friendly assassins have an additional 15% chance to deal 5x damage.',
     active: false
   },
   demonhunter: {
@@ -27,8 +27,8 @@ export const synergies = {
     active: false
   },
   mage: {
-    3: 'Magic resistance decreased by 40% for all enemies.',
-    6: 'Magic resistance decreased by an additional 40% for all enemies.',
+    3: 'Magic resistance decreased by 35% for all enemies.',
+    6: 'Magic resistance decreased by an additional 45% for all enemies.',
     active: false
   },
   mech: {
@@ -46,15 +46,15 @@ export const synergies = {
     active: false
   },
   warrior: {
-    3: 'Armor increased by 7 for all friendly warriors.',
-    6: 'Armor increased by an additional 8 for all friendly warriors.',
+    3: 'Armor increased by 5 for all friendly warriors.',
+    6: 'Armor increased by an additional 7 for all friendly warriors.',
     9: 'Armor increased by and additional 9 for all friendly warriors.',
     active: false
   },
   beast: {
     2: 'Attack damage increased by 10% for all allies',
-    4: 'Attack damage increased by an additional 15% for all allies',
-    6: 'Attack damage increased by an additional 20% for all allies',
+    4: 'Attack damage increased by an additional 20% for all allies',
+    // 6: 'Attack damage increased by an additional 20% for all allies',
     active: false
   },
   demon: {
@@ -92,8 +92,8 @@ export const synergies = {
     active: false
   },
   naga: {
-    2: 'Magic resistance increased by 30% for all allies.',
-    4: 'Magic resistance increased by an additional 30% for all allies.',
+    2: 'Magic resistance increased by 40% for all allies.',
+    // 4: 'Magic resistance increased by an additional 30% for all allies.',
     active: false
   },
   ogre: {
@@ -115,6 +115,10 @@ export const synergies = {
     2: 'Armor decreased by 4 for all enemies.',
     4: 'Armor decreased by 6 for all enemies.',
     6: 'Armor decreased by 7 for all enemies.',
+    active: false
+  },
+  god: {
+    1: 'All allies cd decreased by 50%',
     active: false
   },
   satyr: {
