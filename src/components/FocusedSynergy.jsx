@@ -6,21 +6,30 @@ class FocusedSynergy extends Component {
     const activeSynergies = [];
     const { synergies } = this.props;
     Object.keys(synergies[synergy]).map(key => {
-      if (key !== 'active' && synergies[synergy].active) {
-        const threshhold = parseInt(key);
-        if (count >= threshhold) {
-          activeSynergies.push(
-            <div className="active-synergy" key={`${synergy}-${key}`}>
-              {synergies[synergy][key]}
-            </div>
-          )
-        } else {
-          activeSynergies.push(
-            <div className="missing-synergy" key={`${synergy}-${key}`}>
-              Missing {threshhold - count}.  {synergies[synergy][key]}
-            </div>
-          )
-        }
+      if (!synergies[synergy].active) {
+        return undefined;
+      }
+
+      switch (key) {
+        case 'active': return undefined;
+        case 'race': return undefined;
+        case 'job': return undefined;
+        default: break;
+      }
+
+      const threshhold = parseInt(key);
+      if (count >= threshhold) {
+        activeSynergies.push(
+          <div className="active-synergy" key={`${synergy}-${key}`}>
+            {synergies[synergy][key]}
+          </div>
+        )
+      } else {
+        activeSynergies.push(
+          <div className="missing-synergy" key={`${synergy}-${key}`}>
+            Missing {threshhold - count}.  {synergies[synergy][key]}
+          </div>
+        )
       }
       return key;
     });
@@ -28,7 +37,7 @@ class FocusedSynergy extends Component {
   }
   render() {
     if (!this.props.active) {
-      return <div className="synergy-active" style={{color: 'white'}}>Select a Synergy</div>
+      return <div className="synergy-active" style={{ color: 'white' }}>Select a Synergy</div>
     }
     return (
       <div className="synergy-active">

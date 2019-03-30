@@ -22,4 +22,8 @@ class App extends Component {
   }
 }
 
-export default DragDropContext(TouchBackend({ enableMouseEvents: true }))(App);
+const touchOptions = {
+  enableMouseEvents: true
+};
+
+export default DragDropContext(TouchBackend(touchOptions))(App);

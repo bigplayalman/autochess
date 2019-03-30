@@ -8,6 +8,9 @@ const squareTarget = {
   },
   canDrop(props) {
     return props.children === undefined;
+  },
+  hover(props, monitor) {
+    console.log(props, monitor.getItem());
   }
 };
 
@@ -19,7 +22,7 @@ function collect(connect, monitor) {
   };
 }
 
-function Square({ connectDropTarget, isOver, canDrop, children }) {
+function Square({ connectDropTarget, isOver, canDrop, children, position, onClick }) {
   const renderOverlay = (color) => {
     return (
       <div style={{
@@ -33,7 +36,9 @@ function Square({ connectDropTarget, isOver, canDrop, children }) {
     );
   }
   return connectDropTarget(
-    <div className="square" style={{
+    <div className="square"
+      onClick={() => onClick(position)}
+      style={{
       position: 'relative'
     }}>
       {children}
