@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "00d84a9ad637899eef91f0331d4fe90b",
-    "url": "/static/media/mars_full.00d84a9a.png"
+    "revision": "b11a1c4dfc55312bf0784e2916a83e79",
+    "url": "/static/media/magnataur_full.b11a1c4d.png"
   },
   {
-    "revision": "a1d3360be851dab4d99a",
+    "revision": "7c3d85bcf900ee0159fa",
     "url": "/static/css/main.cf275216.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "5ba4a9c2c85262f7809b",
-    "url": "/static/js/2.5ba4a9c2.chunk.js"
+    "revision": "44c9e64aa1965ff13ff9",
+    "url": "/static/js/2.44c9e64a.chunk.js"
   },
   {
     "revision": "50062f25b4d79a54a118abfa55fd9a25",
@@ -200,6 +200,10 @@ self.__precacheManifest = [
     "url": "/static/media/goblin.d14cbced.png"
   },
   {
+    "revision": "d8fe07455ff8cea1606dc0b59386ac21",
+    "url": "/static/media/god.d8fe0745.png"
+  },
+  {
     "revision": "afa3e877b5366e76e2882d6d3b047dfe",
     "url": "/static/media/gyrocopter_full.afa3e877.png"
   },
@@ -280,12 +284,12 @@ self.__precacheManifest = [
     "url": "/static/media/mage.a2220f63.png"
   },
   {
-    "revision": "b11a1c4dfc55312bf0784e2916a83e79",
-    "url": "/static/media/magnataur_full.b11a1c4d.png"
+    "revision": "7c3d85bcf900ee0159fa",
+    "url": "/static/js/main.7c3d85bc.chunk.js"
   },
   {
-    "revision": "a1d3360be851dab4d99a",
-    "url": "/static/js/main.a1d3360b.chunk.js"
+    "revision": "00d84a9ad637899eef91f0331d4fe90b",
+    "url": "/static/media/mars_full.00d84a9a.png"
   },
   {
     "revision": "40a4a8867735e811fd516d58322fb479",
@@ -564,7 +568,7 @@ self.__precacheManifest = [
     "url": "/static/media/zues_full.9c9d00d8.png"
   },
   {
-    "revision": "775821542b7836b70e6e78a5d7b6c6a7",
+    "revision": "2d30bdb9fdc90311a6255fd21a653e32",
     "url": "/index.html"
   }
 ];
