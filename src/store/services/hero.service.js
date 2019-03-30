@@ -69,10 +69,11 @@ const setHero = (hero) => {
 const updateHero = (name, position) => {
   return (dispatch, getState) => {
     const state = getState().heroes.heroes;
+    const currentPosition = state[name].position;
     const hero = {
       [name]: {
         ...state[name],
-        position: position
+        position: position ? position : currentPosition
       }
     }
     dispatch(setData(hero));

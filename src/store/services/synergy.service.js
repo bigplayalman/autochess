@@ -48,17 +48,52 @@ const setActive = (prop) => {
   return { type: SET_ACTIVE, res: prop }
 }
 // endregion
+const demonSynergy = (actives) => {
+  if (actives['demon'] >= 2) {
+    return actives['demonhunter'] && actives['demonhunter'] >= 2;
+  }
+  return true;
+}
 
+const synergyThreshold = (count, synergy) => {
+  let active = undefined;
+  Object.keys(synergy).map(prop => {
+    const threshold = parseInt(prop);
+    if (threshold && count >= threshold) {
+       active = synergy;
+    }
+    return prop;
+  })
+  console.log(active);
+  return active;
+}
+
+const godSynergy = (heroes, synergies, actives) => {
+  // no god heroes
+  if (!heroes.Mars.position && !heroes.Zues.position) {
+    return false;
+  }
+  const species = [];
+   Object.keys(synergies).map(synergy => {
+    if (synergies[synergy].race && synergies[synergy].active && synergy !== 'god') {
+      const activeSynergy = synergyThreshold(actives[synergy], synergies[synergy]);
+      if (activeSynergy) {
+        species.push(activeSynergy)
+      }
+    }
+    return synergy;
+  });
+  return species.length === 0;
+}
 // region Action Creators
 const activateSynergies = (synergies, actives) => {
   Object.keys(actives).map(active => {
     if (actives[active] < 1) {
       synergies[active].active = false;
     } else {
-      if (active === 'demon' && actives['demon'] >= 2) {
-        synergies[active].active = actives['demonhunter'] && actives['demonhunter'] >= 2;
-      } else {
-        synergies[active].active = true;
+      switch (active) {
+        case 'demon': synergies[active].active = demonSynergy(actives); break;
+        default: synergies[active].active = true; break;
       }
     }
     return active;
@@ -68,6 +103,7 @@ const activateSynergies = (synergies, actives) => {
 
 const addSynergies = (actives) => {
   return (dispatch, getState) => {
+    const heroes = getState().heroes.heroes;
     const state = { ...getState().synergies };
     actives.map(active => {
       if (state.actives[active]) {
@@ -78,6 +114,7 @@ const addSynergies = (actives) => {
       return active;
     });
     state.synergies = activateSynergies(state.synergies, state.actives);
+    state.synergies.god.active = godSynergy(heroes, state.synergies, state.actives);
     dispatch(setSynergy(state));
   }
 }
