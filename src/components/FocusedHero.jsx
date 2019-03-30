@@ -42,7 +42,6 @@ export class FocusedHero extends Component {
     }
     const hero = Object.keys(this.props.focused)[0];
     const heroProps = Object.keys(this.props.focused[hero]);
-    console.log(heroProps);
     return (
       <div className="focus-container">
         <strong>

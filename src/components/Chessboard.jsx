@@ -19,6 +19,13 @@ class Chessboard extends Component {
     this.props.updateHero(hero, position);
   }
 
+  handleClick(position) {
+    const hero = this.getHero(position);
+    if (hero) {
+      this.props.updateHero(hero, undefined);
+    }
+  }
+
   splitToChunks(array, parts) {
     let result = [];
     for (let i = parts; i > 0; i--) {
@@ -28,14 +35,13 @@ class Chessboard extends Component {
       }
       result.push(newArray);
     }
-    console.log(result);
     return result;
   }
   generateSquares() {
     const squares = [];
     for (var i = 1; i <= 32; i++) {
       squares.unshift(
-        <Square key={i} position={i} updatePosition={this.updatePosition.bind(this)}>
+        <Square key={i} position={i} updatePosition={this.updatePosition.bind(this)} onClick={this.handleClick.bind(this)}>
           {this.renderHero(i)}
         </Square>
       )
