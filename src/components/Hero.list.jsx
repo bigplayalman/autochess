@@ -38,7 +38,7 @@ export class HeroList extends Component {
     const { heroes } = this.props;
     const containerClasses = classnames({
       'hero-list-container': true,
-      'hidden': !this.props.show
+      'show': this.props.show
     });
     return (
       <div className={containerClasses}>
@@ -67,7 +67,6 @@ const getData = (state, store) => state[store];
 const mapStateToProps = (state) => {
   return {
     heroes: getData(state, 'heroes').heroes,
-    show: getData(state, 'heroes').show,
     synergies: getData(state, 'synergies'),
     images: getData(state, 'images')
   };
