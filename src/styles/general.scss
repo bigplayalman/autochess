@@ -13,23 +13,25 @@ html {
   font-family: 'Open Sans', sans-serif;
   background: $theme-color-1;
 }
-
-header,
-footer {
-  display: flex;
-  align-items: center;
-  background: $theme-color-1;
+header {
+  position: sticky;
+  top: 0;
   color: white;
-  padding: 20px;
+  background: $theme-color-1;
+  z-index: 4;
+  button {
+    background: $theme-color-1;
+    color: white;
+    border: none;
+  }
   strong {
     display: block;
+    padding: 20px;
   }
 }
-
 footer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  background: $theme-color-1;
+  color: white;
   padding: 10px;
   a {
     color: white;
@@ -37,12 +39,10 @@ footer {
   }
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+.sidebar {
+  background: $theme-color-1;
+  border-right: 2px solid darken($theme-color-1, 1);
 }
-
 .hero-list {
   background: $theme-color-1;
   .hero {
