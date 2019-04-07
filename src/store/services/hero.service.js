@@ -6,7 +6,6 @@ import {
 } from "./synergy.service";
 // region Action Types
 const SET_HERO = 'hero/SET';
-const TOGGLE_HEROES = 'hero/TOGGLE';
 // endregion
 
 // region initialState
@@ -21,12 +20,6 @@ const initialState = {
 const reducer = (state = initialState, action = {}) => {
 
   switch (action.type) {
-    case TOGGLE_HEROES: {
-      return {
-        ...state,
-        show: action.res
-      }
-    }
     case SET_HERO:
       return {
         ...state,
@@ -48,13 +41,6 @@ const setData = (prop) => {
     type: SET_HERO,
     res: prop
   };
-}
-
-const toggleHero = (value) => {
-  return {
-    type: TOGGLE_HEROES,
-    res: value
-  }
 }
 // endregion
 
@@ -150,7 +136,6 @@ const actionTypes = {
 
 const actionCreators = {
   setHero,
-  toggleHero,
   selectHero,
   updateHero
 };

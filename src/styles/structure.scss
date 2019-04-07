@@ -1,0 +1,186 @@
+@import "./heroes.scss";
+@import "./general.scss";
+@import "./menu.scss";
+@import "./sidebar.scss";
+
+$square-mobile: calc(100vw/8);
+$square-synergy: calc(100vw/4);
+$sidebar-left: 130px;
+$sidebar-right: 300px;
+
+html,
+body,
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+}
+
+@media (min-width: 1330px) {
+  main {
+    overflow: auto;
+  }
+  header {
+    grid-template-columns: 1fr;
+
+  }
+  header, footer {
+    grid-column: auto / span 3;
+  }
+
+  .container {
+    grid-template-columns: $sidebar-left 1fr $sidebar-right;
+    grid-template-rows: auto 86vh auto;
+    .hidden {
+      display: none;
+    }
+    .chessboard {
+      padding: 20px 0;
+      .square {
+        max-height: calc((100vw - #{$sidebar-left} - #{$sidebar-right})/8*.7);
+      }
+    }
+    .sidebar-right {
+      position: inherit;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+    .sidebar {
+      position: inherit;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+}
+
+.chessboard-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .synergy-container {
+    width: 100%;
+  }
+
+  .chessboard-container {
+    min-width: 70%;
+    margin: 20px auto;
+  }
+
+  >* {
+    min-width: 50%;
+    /* value to use above 900px */
+    width: calc((900px - 100%) * 900);
+    /* 900px "breakpoint" */
+    max-width: 100%;
+
+    /* value to use below 900px */
+    // &:last-child {
+    //   position: relative;
+    // }
+
+    // &:last-child::after {
+    //   /**
+    //    * This is the second part of the hack. It creates
+    //    * an invisible element on the last child that
+    //    * forces a space between the child and the right
+    //    * edge of the container.
+    //    */
+    //   display: block;
+    //   width: 11px;
+    //   height: 1px;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 100%;
+    //   visibility: hidden;
+    //   content: "";
+    // }
+  }
+}
+
+.hero-list-container {
+  height: calc(100vh - 58px);
+  overflow: scroll;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  .square {
+    min-height: 40px;
+    height: 12.5vw;
+    max-height: calc((100vw - #{$sidebar-left} - #{$sidebar-right})/8);
+  }
+}
+
+.focus-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px;
+  text-transform: capitalize;
+  >* {
+    >div {
+      border: 2px solid;
+      padding: 5px;
+      display: inline-block;
+    }
+  }
+}
+
+.hero-list {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.synergy-list {
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.synergy-item {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  .synergy-item-count {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.synergy-item-body {
+  display: flex;
+  flex-flow: column wrap;
+
+  >* {
+    flex: 1 1;
+  }
+}
