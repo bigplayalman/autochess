@@ -84,6 +84,10 @@ header {
 
 @media (min-width: 1024px) {
   .container {
+    .inactive-synergy-container, .active-synergy-container {
+      max-height: calc((100vw - 400px)/2);
+      overflow: scroll;
+    }
     .chessboard-view {
       display: grid;
       gap: 10px;
@@ -127,8 +131,13 @@ header {
     .chessboard-view {
       grid-template-columns: 1fr 2fr 2fr 1fr;
     }
+    .inactive-synergy-container, .active-synergy-container {
+      max-height: calc((66vw - #{$sidebar-left} - #{$sidebar-right})/2);
+      overflow: scroll;
+    }
     .chessboard {
       padding: 20px 0;
+
 
       .square {
         max-height: calc((66vw - #{$sidebar-left} - #{$sidebar-right})/8);
