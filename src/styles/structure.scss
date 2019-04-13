@@ -132,7 +132,7 @@ header {
       grid-template-columns: 1fr 2fr 2fr 1fr;
     }
     .inactive-synergy-container, .active-synergy-container {
-      max-height: calc((66vw - #{$sidebar-left} - #{$sidebar-right})/2);
+      max-height: calc((67vw - #{$sidebar-left} - #{$sidebar-right})/1.9);
       overflow: scroll;
     }
     .chessboard {
