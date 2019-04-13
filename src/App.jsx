@@ -27,7 +27,6 @@ class App extends Component {
   }
 
   toggleSidebar(side, value) {
-    console.log(side, value);
     this.setState({ [side]: value });
   }
 

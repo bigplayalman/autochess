@@ -3,13 +3,14 @@ import Chessboard from "../components/Chessboard";
 import SynergyList from "../components/Synergy.list";
 import FocusedHero from "../components/FocusedHero";
 import FocusedSynergy from "../components/FocusedSynergy";
+import CurrentSynergyList from "../components/Synergy.current.list";
 
 export const ChessboardView = () => {
   return (
     <div className="chessboard-view">
-      <div>Active</div>
+      <CurrentSynergyList type="active"/>
       <Chessboard />
-      <div>Inactive</div>
+      <CurrentSynergyList type="inactive"/>
       <SynergyList />
       <FocusedHero />
       <FocusedSynergy />

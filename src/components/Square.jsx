@@ -8,9 +8,6 @@ const squareTarget = {
   },
   canDrop(props) {
     return props.children === undefined;
-  },
-  hover(props, monitor) {
-    console.log(props, monitor.getItem());
   }
 };
 
