@@ -20,7 +20,7 @@ header {
   background: $theme-color-1;
   z-index: 4;
   button {
-    background: $theme-color-1;
+    background: lighten($theme-color-1, 10);
     color: white;
     border: none;
   }
@@ -101,7 +101,10 @@ main {
 }
 
 .focus-container {
-  background: lighten($theme-color-1, 5);
+  box-shadow: $theme-card-shadow;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px;
   color: white;
 }
 
