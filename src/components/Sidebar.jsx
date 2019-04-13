@@ -6,8 +6,8 @@ export const Sidebar = ({ show }) => {
   const navClasses = classnames({
     sidebar: true,
     show
-  })
-  console.log(navClasses);
+  });
+
   return (
     <nav className={navClasses}>
       <Link to="/">Chessboard</Link>
