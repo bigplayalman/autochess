@@ -7,9 +7,9 @@ import FocusedSynergy from "../components/FocusedSynergy";
 export const ChessboardView = () => {
   return (
     <div className="chessboard-view">
-      <div className="chessboard-container">
-        <Chessboard />
-      </div>
+      <div>Active</div>
+      <Chessboard />
+      <div>Inactive</div>
       <SynergyList />
       <FocusedHero />
       <FocusedSynergy />
