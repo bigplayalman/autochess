@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import SynergyListView from './views/Synergy.list.view';
 import Sidebar from './components/Sidebar';
 import HeroList from './components/Hero.list';
+import NeutralsList from './components/Neutrals.list';
 
 class App extends Component {
 
@@ -50,7 +51,7 @@ class App extends Component {
             </main>
             <aside className={sidebarRight}>
               <Route path="/" exact component={HeroList}/>
-              <Route path="/list/" component={SynergyListView} />
+              <Route path="/list/" component={NeutralsList} />
             </aside>
             <Footer />
           </div>
