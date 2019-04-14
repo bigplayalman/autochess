@@ -15,7 +15,8 @@ export class NeutralsList extends Component {
     });
     return (
       <div className={containerClasses}>
-        neutrals
+        Neutrals List <br />
+        Coming Soon
       </div>
     );
   }

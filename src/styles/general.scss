@@ -43,6 +43,10 @@ footer {
   background: $theme-color-1;
   border-right: 2px solid darken($theme-color-1, 1);
 }
+.neutrals-container {
+  background: $theme-color-1;
+  color: white;
+}
 .hero-list {
   background: $theme-color-1;
   .hero {
