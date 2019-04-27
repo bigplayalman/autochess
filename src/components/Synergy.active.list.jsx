@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import {actionCreators as synergyStore} from "../store/services/synergy.service";
 
-class SynergyList extends Component {
+class SynergyActiveList extends Component {
   getActives = (actives) => {
     const activeSynergies = [];
     Object.keys(actives).map(active => {
@@ -50,5 +50,5 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-const SynergyListConnected = connect(mapStateToProps, mapDispatchToProps)(SynergyList);
-export default SynergyListConnected;
+const SynergyActiveListConnected = connect(mapStateToProps, mapDispatchToProps)(SynergyActiveList);
+export default SynergyActiveListConnected;

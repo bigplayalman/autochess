@@ -49,8 +49,8 @@ export const synergies = {
     active: false
   },
   warlock: {
-    3: 'Provides 20% lifesteal to all allies.',
-    6: 'Provides an additional 20% lifesteal for all allies.',
+    3: 'Provides 15% lifesteal and 15% spell lifesteal to all allies.',
+    6: 'Provides 25% lifesteal and 25% spell lifesteal to all allies.',
     job: true,
     active: false
   },
@@ -146,9 +146,9 @@ export const synergies = {
     race: true,
     active: false
   },
-  satyr: {
-    1: 'Hides your bench from the enemy vision as long as a satyr is on your bench.',
-    race: true,
-    active: false
-  }
+  // satyr: {
+  //   1: 'Hides your bench from the enemy vision as long as a satyr is on your bench.',
+  //   race: true,
+  //   active: false
+  // }
 }
