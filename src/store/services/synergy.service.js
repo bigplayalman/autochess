@@ -50,21 +50,23 @@ const setActive = (prop) => {
 // endregion
 const demonSynergy = (actives) => {
   if (actives['demon'] >= 2) {
-    return actives['demonhunter'] && actives['demonhunter'] >= 2;
+    const active = actives['demonhunter'] && actives['demonhunter'] >= 2 ? true: false;
+    console.log('demon', active);
+    return active;
   }
   return true;
 }
 
 const synergyThreshold = (count, synergy) => {
   let active = undefined;
+  console.log(synergy);
   Object.keys(synergy).map(prop => {
     const threshold = parseInt(prop);
     if (threshold && count >= threshold) {
-       active = synergy;
+      active = synergy;
     }
     return prop;
-  })
-  console.log(active);
+  });
   return active;
 }
 
@@ -74,8 +76,16 @@ const godSynergy = (heroes, synergies, actives) => {
     return false;
   }
   const species = [];
-   Object.keys(synergies).map(synergy => {
-    if (synergies[synergy].race && synergies[synergy].active && synergy !== 'god') {
+  Object.keys(synergies).map(synergy => {
+    console.log(synergy);
+    if (!synergies[synergy].race) {
+      return synergy;
+    }
+    if (synergy === 'god') {
+      return synergy;
+    }
+    if (synergies[synergy].active) {
+
       const activeSynergy = synergyThreshold(actives[synergy], synergies[synergy]);
       if (activeSynergy) {
         species.push(activeSynergy)
@@ -83,6 +93,7 @@ const godSynergy = (heroes, synergies, actives) => {
     }
     return synergy;
   });
+  console.log('active species', species);
   return species.length === 0;
 }
 // region Action Creators
@@ -121,12 +132,14 @@ const addSynergies = (actives) => {
 
 const removeSynergies = (actives) => {
   return (dispatch, getState) => {
+    const heroes = getState().heroes.heroes;
     const state = { ...getState().synergies };
     actives.map(active => {
       state.actives[active]--;
       return active;
     });
     state.synergies = activateSynergies(state.synergies, state.actives);
+    state.synergies.god.active = godSynergy(heroes, state.synergies, state.actives);
     dispatch(setSynergy(state));
   }
 }
