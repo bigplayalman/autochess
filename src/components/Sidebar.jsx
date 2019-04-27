@@ -12,6 +12,7 @@ export const Sidebar = ({ show }) => {
     <nav className={navClasses}>
       <Link to="/">Chessboard</Link>
       <Link to="/list/">Synergy List</Link>
+      <a href="https://discord.gg/7wqYw5h" target="_blank" rel="noopener noreferrer">Discord</a>
     </nav>
   );
 };
