@@ -5,7 +5,7 @@
   padding-top: 20px;
   height: calc(100% - 58px);
   overflow-x: hidden;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 3;
   font-size: .8rem;
@@ -29,7 +29,7 @@
   right: -400px;
   height: calc(100% - 58px);
   overflow-x: hidden;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 3;
   &.show {
