@@ -116,7 +116,7 @@ export const synergies = {
     active: false
   },
   ogre: {
-    1: 'Max health points increased by 5% for each head.',
+    1: 'Grant +5% max HP for all allies',
     race: true,
     active: false
   },
@@ -146,6 +146,11 @@ export const synergies = {
     race: true,
     active: false
   },
+  priest: {
+    1: 'Reduce damage to courier by 20%.',
+    race: false,
+    active: false
+  }
   // satyr: {
   //   1: 'Hides your bench from the enemy vision as long as a satyr is on your bench.',
   //   race: true,
