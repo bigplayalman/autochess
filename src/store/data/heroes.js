@@ -19,6 +19,7 @@ export const heroes = {
   "Alchemist": {
     "position": null,
     "goblin": true,
+    "ogre": true,
     "warlock": true,
     "cost": 4
   },
@@ -137,12 +138,12 @@ export const heroes = {
     "warrior": true,
     "cost": 4
   },
-  "Lich": {
-    "position": null,
-    "undead": true,
-    "mage": true,
-    "cost": 5
-  },
+  // "Lich": {
+  //   "position": null,
+  //   "undead": true,
+  //   "mage": true,
+  //   "cost": 5
+  // },
   "Lina": {
     "position": null,
     "human": true,
@@ -372,5 +373,16 @@ export const heroes = {
     "god": true,
     "warrior": true,
     "cost": 1
+  },
+  "Dazzle": {
+    "position": null,
+    "troll": true,
+    "priest": true,
+    "cost": 3
+  },
+  "Io": {
+    "position": null,
+    "elf": true,
+    "cost": 5
   }
 }

@@ -88,7 +88,7 @@ header {
     .inactive-synergy-container,
     .active-synergy-container {
       max-height: calc((100vw - 400px)/2);
-      overflow: scroll;
+      // overflow: scroll;
     }
 
     .chessboard-view {
@@ -111,9 +111,6 @@ header {
 }
 
 @media (min-width: 1330px) {
-  main {
-    overflow: auto;
-  }
 
   header {
     grid-template-columns: 1fr;
@@ -140,7 +137,7 @@ header {
     .inactive-synergy-container,
     .active-synergy-container {
       max-height: calc((67vw - #{$sidebar-left} - #{$sidebar-right})/1.9);
-      overflow: scroll;
+      // overflow: scroll;
     }
 
     .chessboard {
@@ -169,11 +166,6 @@ header {
     }
   }
 
-}
-
-.hero-list-container {
-  height: calc(100vh - 58px);
-  overflow: scroll;
 }
 
 .chessboard {
