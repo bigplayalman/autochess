@@ -1,7 +1,7 @@
 export const synergies = {
   assasin: {
     3: 'All friendly assassins have a 15% chance to deal 350%',
-    6: 'All friendly assassins have an additional 20% chance to deal 450% damage',
+    6: 'All friendly assassins have an additional 15% chance to deal 450% damage',
     // 9: 'All friendly assassins have an additional 15% chance to deal 5x damage.',
     job: true,
     active: false
@@ -19,16 +19,15 @@ export const synergies = {
     active: false
   },
   hunter: {
-    3:'Attack damage increased by 25% for all friendly hunters.',
-    6: 'Attack damage increased by an additional 30% for all friendly hunters.',
+    3:'All friendly hunters have +30 base attack damage, and have +30% chance to pierce through evasion.',
+    6: 'All friendly hunters have additional +40 base attack damage and +40% chance to pierce through evasion.',
     job: true,
     active: false
   },
   knight: {
-    2: 'All friendly knights have a 30% chance to trigger a damage-reduction shield when attacked.',
-    4: 'All friendly knights have a 30% (51% total) chance to trigger a damage-reduction shield when attacked.',
-    6: 'All friendly knights have a 30% (65% total) chance to trigger a damage-reduction shield when attacked.',
-    job: true,
+    3: 'All friendly Knights have a 40% chance to proc a damage-reducing shield.',
+    // 4: 'All friendly knights have a 30% (51% total) chance to trigger a damage-reduction shield when attacked.',
+    6: 'All allies have a 35% chance to proc a damage-reducing shield.',
     active: false
   },
   mage: {
@@ -44,13 +43,13 @@ export const synergies = {
     active: false
   },
   shaman: {
-    2: 'Hex affects a random enemy when the battle starts.',
+    2: 'Hex a random enemy when battle starts for 8 seconds.',
     job: true,
     active: false
   },
   warlock: {
-    3: 'Provides 15% lifesteal and 15% spell lifesteal to all allies.',
-    6: 'Provides 25% lifesteal and 25% spell lifesteal to all allies.',
+    3: 'Provides 10% lifesteal and 10% spell lifesteal to all allies.',
+    6: 'Provides 20% lifesteal and 20% spell lifesteal to all allies.',
     job: true,
     active: false
   },
@@ -97,8 +96,8 @@ export const synergies = {
     active: false
   },
   goblin: {
-    3: 'Armor and HP regeneration increased by 15 for a random ally.',
-    6: 'Armor and HP regeneration increased by 15 for all allies.',
+    3: 'Grants a random ally +15 armor and +10 HP regeneration.',
+    6: 'Grants all allies with +15 armor and +10 HP regeneration.',
     race: true,
     active: false
   },
@@ -123,7 +122,7 @@ export const synergies = {
   orc: {
     2: 'Max health points increased by 200 for all friendly orcs.',
     4: 'Max health points increased by an additional 300 for all friendly orcs.',
-    6: 'Max health points increased by an additional 400 for all friendly orcs',
+    // 6: 'Max health points increased by an additional 400 for all friendly orcs',
     race: true,
     active: false
   },
@@ -136,7 +135,7 @@ export const synergies = {
   undead: {
     2: 'Armor decreased by 4 for all enemies.',
     4: 'Armor decreased by 6 for all enemies.',
-    6: 'Armor decreased by 7 for all enemies.',
+    // 6: 'Armor decreased by 7 for all enemies.',
     race: true,
     active: false
   },
@@ -148,7 +147,7 @@ export const synergies = {
   },
   priest: {
     1: 'Reduce damage to courier by 20%.',
-    race: false,
+    job: true,
     active: false
   }
   // satyr: {
