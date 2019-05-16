@@ -27,7 +27,7 @@ export const synergies = {
   knight: {
     3: 'All friendly Knights have a 40% chance to proc a damage-reducing shield.',
     // 4: 'All friendly knights have a 30% (51% total) chance to trigger a damage-reduction shield when attacked.',
-    6: 'All allies have a 35% chance to proc a damage-reducing shield.',
+    6: 'All allies have a 40% chance to proc a damage-reducing shield.',
     active: false
   },
   mage: {

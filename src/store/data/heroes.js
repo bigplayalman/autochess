@@ -4,7 +4,7 @@ export const heroes = {
     "undead": true,
     "knight": true,
     // "active": "APHOTIC SHIELD",
-    // "cost": 3,
+    "cost": 3,
     // "description": "Summons dark energies around an ally unit, creating a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.",
     // "max damage absorbed": [100, 150, 200],
     // "duration": 10,
